@@ -7,7 +7,7 @@
   /* Color */
   background-color: $background;
 
-  .home__heading {
+  &__heading {
     h1 {
       /* Text  */
       font-weight: 600;
@@ -27,7 +27,7 @@
       color: $gray;
     }
 
-    .home__heading-bnt {
+    &__heading-bnt {
       /* Box Model */
       border: 1px solid $primary;
     }
@@ -76,8 +76,7 @@
 
 .home__frame {
   /* Positioning */
-  bottom: -5px;
-
+  bottom: -6px;
   /* Box Model */
   width: 402px;
   border: 1px solid $gray;
@@ -95,7 +94,7 @@
     font-weight: 600;
   }
 
-  .home__box {
+  .home__frame-box {
     /* Positioning */
     left: 0;
 
