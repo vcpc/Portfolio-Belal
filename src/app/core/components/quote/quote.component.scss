@@ -1,0 +1,62 @@
+@import "../../../styles/utilities/varibules";
+@mixin home__qoute {
+  content: "";
+  /* Positioning */
+  position: absolute;
+  top: 0;
+
+  /* Box Model */
+  width: 25px;
+  height: 25px;
+
+  /* Other */
+  transform: translatey(-50%);
+  background-image: url("./../../../../assets/quote.svg");
+}
+
+.home__qote {
+  /* Layout */
+  align-items: flex-start;
+  gap: 10px;
+
+  /* Box Model */
+  width: 648px;
+  padding: 32px;
+  border: 1px solid $gray;
+  text-align: center;
+
+  /* Color */
+  background: $background;
+  &:before {
+    /* Positioning */
+    left: 15px;
+
+    /* Other */
+    @include home__qoute;
+  }
+  p {
+    /* Color */
+    color: #fff;
+
+    /* Text */
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .home__qoute__author {
+    /* Positioning */
+    right: -1px;
+    bottom: -35px;
+
+    /* Box Model */
+    border: 1px solid $gray;
+    padding: 16px;
+
+    /* Other */
+    transform: translateY(50%);
+    &:before {
+      /* Other */
+      @include home__qoute;
+      right: 15px;
+    }
+  }
+}

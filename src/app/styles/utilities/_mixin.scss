@@ -1,0 +1,10 @@
+@mixin home__qoute {
+  content: "";
+  position: absolute;
+  transform: translatey(-50%);
+  top: 0;
+  left: 15px;
+  width: 25px;
+  height: 25px;
+  background-image: url("./../../../assets/quote.svg");
+}
