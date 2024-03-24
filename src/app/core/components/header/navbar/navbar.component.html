@@ -1,28 +1,44 @@
-<div class="container">
-  <nav class="navbar">
+<div class="container fixed-top">
+  <nav #navbar class="navbar align-items-start flex-wrap flex-sm-nowrap">
     <a class="fw-bold text-decoration-none text-white" href="#">
-      <img class="navbar-logo" src="./assets/logo-solid.svg" alt="">
+      <img class="navbar-logo" src="./assets/logo-solid.svg" alt="logo-solid">
       <span class="ps-2">Elias</span>
     </a>
-    <ul class="list-unstyled d-flex">
-      <li>
+    <button *ngIf="navbarShowFlag" (click)="openNavBar(navbar,navbarList)"
+      class="d-block d-sm-none border-0 bg-transparent">
+      <img src="./assets/burger_btn.svg" alt="burger_btn">
+    </button>
+    <button *ngIf="!navbarShowFlag" (click)="closeNavBar(navbar,navbarList)"
+      class="d-block d-sm-none  nabbar-burgarBtn border-0 bg-transparent w-50 text-end">
+      <img src="./assets/close_btn.svg" alt="close_btn">
+    </button>
+    <ul #navbarList
+      class="navbar-list list-unstyled d-none d-sm-flex mb-0 align-self-start h-100 mt-3 mt-sm-0 position-relative">
+      <li class="pb-4 pb-sm-0 navbar-item">
         <a class="navbar-link text-decoration-none active" href="#"><span class="navbar-link_hash">#</span>home</a>
       </li>
-      <li>
+      <li class="pb-4 navbar-item">
         <a class="navbar-link text-decoration-none" href="#"><span class="navbar-link_hash">#</span>works</a>
       </li>
-      <li>
+      <li class="pb-4 navbar-item">
         <a class="navbar-link text-decoration-none" href="#"><span class="navbar-link_hash">#</span>about-me</a>
       </li>
-      <li>
+      <li class="pb-4 navbar-item">
         <a class="navbar-link text-decoration-none" href="#"><span class="navbar-link_hash">#</span>contacts</a>
       </li>
-      <li>
-        <a class="navbar-link text-decoration-none" href="#">
+      <li class="pb-4 navbar-item align-self-end">
+        <a class="navbar-link text-decoration-none fw-medium" href="#">
           <span class="navbar-link_hash">#</span>
           <span>EN</span>
-          <span><img class="ps-1" src="./assets/lang-arrow.svg" alt=""></span>
+          <span><img class="ps-1" src="./assets/lang-arrow.svg" alt="language-arrow"></span>
         </a>
+      </li>
+      <li class="d-flex d-sm-none position-absolute start-50 bottom-0 translate-middle mb-5">
+        <ul class="list-unstyled m-0 navbar-socialIcons">
+          <li><i class="fa-brands fa-github"></i></li>
+          <li><i class="fa-brands fa-dribbble"></i></li>
+          <li><i class="fa-brands fa-figma"></i></li>
+        </ul>
       </li>
     </ul>
   </nav>

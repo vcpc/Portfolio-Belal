@@ -24,4 +24,42 @@
   .navbar-link_hash {
     color: $primary;
   }
+  .navbar-socialIcons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    li {
+      width: 46px;
+      height: 46px;
+      font-size: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: gray;
+    }
+  }
+}
+
+@media (max-width: 567px) {
+  .navbar-item {
+    font-size: 32px;
+  }
+  .navbar-list {
+    width: 100%;
+    height: 100%;
+  }
+  .navbar-socialIcons {
+    margin-top: auto;
+  }
+  .navbar.show {
+    height: calc(100vh);
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .navbar {
+    .navbar-link {
+      padding-left: 16px;
+    }
+  }
 }
