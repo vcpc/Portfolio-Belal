@@ -1,0 +1,27 @@
+@import "../../../../../styles/utilities/variables";
+@import "../../../../../styles/base/base";
+
+.navbar {
+  /* Box Model */
+  padding-top: 32px;
+  padding-bottom: 8px;
+
+  /* color */
+  background-color: $background;
+
+  .navbar-logo {
+    width: 16px;
+    height: 16px;
+  }
+  .navbar-link {
+    padding-left: 32px;
+    color: gray;
+    @include transition(0.3s, All);
+  }
+  .navbar-link.active {
+    color: white;
+  }
+  .navbar-link_hash {
+    color: $primary;
+  }
+}
