@@ -1,43 +1,42 @@
-<section class="home pt-5">
-  <div class="container">
-    <div class="row align-items-center justify-content-between mb-5">
-      <div class="col-lg-6">
-        <div class="home__heading pe-5">
+<section class="home">
+  <div class="container home__container-bg">
+    <div
+      class="row gx-2 align-items-center justify-content-between home__row-mb"
+    >
+      <div class="col-lg-6 px-0">
+        <div class="home__heading">
           <h1 class="mb-3">
-            <span class="home__heading-alter">Elias is a</span> web designer
-            <span>And</span> <br />
+            <span>Elias is a</span> web designer <span>And</span>
+            <br />
             front-end developer
           </h1>
           <p class="mb-4">
             He crafts responsive websites where technologies meet creativity
           </p>
-          <button class="btn home__heading-bnt text-white rounded-0 px-3">
+          <button class="btn home__heading__btn text-white rounded-0 px-3">
             contact me !!
           </button>
         </div>
       </div>
-      <div class="col-lg-6 home__imges position-relative">
-        <figure class="home__main-img">
+
+      <div class="col-lg-6 home__images position-relative px-0">
+        <figure class="home__images__main mb-0">
           <img class="w-100" src="./assets/Image-1.png" alt="logo" />
-          <div class="home__main-dots">
-            <figure class="home__dots-img position-absolute">
-              <img class="w-100" src="./assets/Dots.svg" alt="logo" />
-            </figure>
-          </div>
+          <figure class="home__images__dots position-absolute">
+            <img class="w-100" src="./assets/Dots.svg" alt="logo" />
+          </figure>
         </figure>
-        <figure class="home__outline-img position-absolute">
+        <figure class="home__images__outline position-absolute">
           <img class="w-100" src="./assets/logo-outline.svg" alt="logo" />
         </figure>
-
-        <div
-          class="home__frame p-2 d-flex flex-wrap align-items-center gap-2 position-relative"
-        >
-          <div class="home__frame-box"></div>
-          <p class="mb-0">Currently working on</p>
-          <span>Portfolio</span>
+        <div class="home__frame p-2 d-flex align-items-center gap-2">
+          <div class="home__frame__box"></div>
+          <div class="home__frame__title d-flex flex-sm-column flex-md-row">
+            <p class="mb-0 pe-2">Currently working on</p>
+            <span>Portfolio</span>
+          </div>
         </div>
       </div>
     </div>
-    <app-quote class="d-sm-none d-lg-block"></app-quote>
   </div>
 </section>
