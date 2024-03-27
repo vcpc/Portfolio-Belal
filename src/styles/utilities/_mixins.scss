@@ -1,6 +1,0 @@
-@mixin transition($dur, $prop) {
-  transition: $dur $prop;
-  -webkit-transition: $dur $prop;
-  -moz-transition: $dur $prop;
-  -o-transition: $dur $prop;
-}
