@@ -1,0 +1,137 @@
+@import "variables";
+.home {
+  $refer: &;
+  /* Box Model */
+  min-height: 100vh;
+
+  /* Color */
+  background-color: $bg-main;
+
+  &__row-mb {
+    margin: auto {
+      bottom: 112px;
+    }
+  }
+
+  &__heading {
+    h1 {
+      /* Color */
+      color: $primary;
+
+      /* Text  */
+      font : {
+        weight: 600;
+        size: 32px;
+      }
+      line-height: normal;
+    }
+
+    span {
+      /* Color */
+      color: white;
+    }
+
+    p {
+      /* Color */
+      color: $gray;
+
+      /* Layout */
+      max-width: 90%;
+
+      margin: auto {
+        left: 0;
+        start: 0;
+        top: 32px;
+        bottom: 24px;
+      }
+    }
+
+    #{$refer}__btn {
+      /* Box Model */
+      border: 1px solid $primary;
+    }
+  }
+
+  &__images {
+    #{$refer}__main {
+      /* Positioning */
+      position: relative;
+
+      /* Box Model */
+      width: 457px;
+      height: 386px;
+
+      /* Other */
+      z-index: 1;
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+    }
+
+    #{$refer}__dots {
+      /* Box Model */
+      width: 84px;
+      height: 84px;
+
+      /* Positioning */
+      bottom: 12%;
+      right: 18px;
+
+      /* Other */
+      z-index: 1;
+    }
+
+    #{$refer}__outline {
+      /* Positioning */
+      top: 45%;
+      left: -12px;
+
+      /* Box Model */
+      width: 155px;
+      height: 155px;
+
+      /* Other */
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+  }
+
+  &__frame {
+    /* Box Model */
+    width: 457px;
+    border: 1px solid $gray;
+    font-weight: 500;
+    color: $primary;
+
+    /* Other */
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+
+    p {
+      color: $gray;
+    }
+
+    span {
+      /* Color */
+      color: white;
+
+      /* Text*/
+      font-weight: 600;
+    }
+
+    #{$refer}__box {
+      /* Positioning */
+      left: 0;
+
+      /* box Model */
+      width: 16px;
+      height: 16px;
+      border: 1px solid $primary;
+
+      /* Color */
+      background-color: $primary;
+    }
+  }
+}
