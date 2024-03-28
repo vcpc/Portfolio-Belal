@@ -1,0 +1,150 @@
+@import "variables.scss";
+@import "base.scss";
+
+.navbar {
+  /* Box Model */
+  padding-top: 32px;
+  padding-bottom: 8px;
+  /* color */
+  background-color: $background;
+  &__logo {
+    /* Box Model */
+    width: 16px;
+    height: 16px;
+  }
+  &__link {
+    /* Box Model */
+    padding-left: 32px;
+
+    /* Color */
+    color: gray;
+
+    /* other */
+    @include transition(0.3s, All);
+  }
+  &__link.active {
+    /* Color */
+    color: white;
+  }
+  &__item--linkHash {
+    color: $primary;
+  }
+  &__socialIcons {
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    /* Box Model */
+    width: 100%;
+    li {
+      /* layout */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Box Model */
+      width: 46px;
+      height: 46px;
+      /* Color */
+      color: gray;
+      /* Text */
+      font-size: 32px;
+    }
+  }
+
+  &__lang {
+    /* Layout */
+    position: relative;
+    /* Other */
+    cursor: pointer;
+    p {
+      /* Color */
+      opacity: 0;
+      /* Other */
+      transition: 0.3s all;
+    }
+    .lang__dropdown {
+      /* Layout */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      /* Box Model */
+      padding: 8px;
+      /* Color */
+      background-color: $background;
+      opacity: 0;
+      /* Other */
+      overflow: hidden;
+    }
+    .lang__dropdown::after {
+      /* Layout */
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* Box Model */
+      border: 1px solid #abb2bf;
+      /* Color */
+      opacity: 0;
+      /* Other */
+      transform-origin: top;
+      transform: rotatex(70deg) translateY(-5px);
+      transition: 0.3s all;
+    }
+    .chevron-down {
+      /* Other */
+      transition: 0.3s all;
+    }
+    &:hover {
+      .lang__dropdown {
+        /* Color */
+        opacity: 1;
+      }
+      .chevron-down {
+        /* Other */
+        transform: rotate(-180deg);
+      }
+      p {
+        /* Color */
+        opacity: 1;
+      }
+      .lang__dropdown::after {
+        /* Color */
+        opacity: 1;
+        /* Other */
+        transform: rotatex(0deg);
+      }
+    }
+  }
+}
+
+/** 
+* Helper to change the the navbar in small screens
+* 1. change box model 
+* 2. change anchors text 
+*/
+@media (max-width: 567px) {
+  .navbar__list {
+    /* Box Model */ /* 1 */
+    width: 100%;
+    height: 100%;
+  }
+  .navbar__item {
+    /* Text */
+    font-size: 32px; /* 2 */
+  }
+  .navbar.show {
+    /* Box Model */
+    height: 100vh;
+    width: 100%;
+  }
+}
+/** 
+* Helper to change the the navbar items text in small screens
+*/
+@media (max-width: 767px) {
+  .navbar {
+    .navbar-link {
+      /* Box Model */
+      padding-left: 16px;
+    }
+  }
+}
