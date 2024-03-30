@@ -1,3 +1,53 @@
 $bg-main: #282c33;
 $primary: #c778dd;
 $gray: #abb2bf;
+$font: "Fira Code";
+
+.home {
+  $refer: &;
+
+  /* Color */
+  background-color: $bg-main;
+
+  &__heading {
+    h1 {
+      /* Color */
+      color: $primary;
+    }
+
+    p {
+      /* Color */
+      color: $gray;
+    }
+
+    #{$refer}__btn {
+      /* Box Model */
+      border: 1px solid $primary;
+
+      &:hover {
+        /* Box Model */
+        background-color: rgba($color: $primary, $alpha: 0.5);
+      }
+    }
+  }
+
+  &__frame {
+    /* Color */
+    color: $primary;
+
+    /* Box Model */
+    border: 1px solid $gray;
+  }
+
+  p {
+    /* Color */
+    color: $gray;
+  }
+  #{$refer}__box {
+    /* box Model */
+    border: 1px solid $primary;
+
+    /* Color */
+    background-color: $primary;
+  }
+}
