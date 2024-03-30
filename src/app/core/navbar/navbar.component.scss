@@ -1,33 +1,29 @@
-@import "variables.scss";
-@import "base.scss";
+@import "mixins.scss";
 
 .navbar {
-  /* Box Model */
-  padding-top: 32px;
-  padding-bottom: 8px;
+  /** 
+* Helper to remove navbar padding top from small screens
+* 1. change box model 
+*/
+  @media screen and (min-width: 567px) {
+    & {
+      /* Box Model */ /* 1 */
+      padding-top: 32px;
+    }
+  }
   /* color */
-  background-color: $background;
   &__logo {
     /* Box Model */
     width: 16px;
     height: 16px;
   }
   &__link {
-    /* Box Model */
-    padding-left: 32px;
-
-    /* Color */
-    color: gray;
-
     /* other */
     @include transition(0.3s, All);
   }
   &__link.active {
     /* Color */
     color: white;
-  }
-  &__item--linkHash {
-    color: $primary;
   }
   &__socialIcons {
     /* Layout */
@@ -41,10 +37,8 @@
       justify-content: center;
       align-items: center;
       /* Box Model */
-      width: 46px;
-      height: 46px;
-      /* Color */
-      color: gray;
+      width: 64px;
+      height: 64px;
       /* Text */
       font-size: 32px;
     }
@@ -67,13 +61,40 @@
       top: 100%;
       left: 0;
       right: 0;
+      z-index: 2;
       /* Box Model */
       padding: 8px;
       /* Color */
-      background-color: $background;
       opacity: 0;
       /* Other */
       overflow: hidden;
+    }
+    .lang__dropdown.show {
+      /* Color */
+      opacity: 1;
+      .chevron-down {
+        /* Other */
+        transform: rotate(-180deg);
+      }
+      p {
+        /* Color */
+        opacity: 1;
+      }
+    }
+    .lang__dropdown.show::after {
+      /* Color */
+      opacity: 1;
+      /* Other */
+      transform: rotatex(0deg);
+      animation: borderLayer forwards 0s 0.3s;
+    }
+    @keyframes borderLayer {
+      from {
+        z-index: 1;
+      }
+      to {
+        z-index: -1;
+      }
     }
     .lang__dropdown::after {
       /* Layout */
@@ -92,26 +113,6 @@
     .chevron-down {
       /* Other */
       transition: 0.3s all;
-    }
-    &:hover {
-      .lang__dropdown {
-        /* Color */
-        opacity: 1;
-      }
-      .chevron-down {
-        /* Other */
-        transform: rotate(-180deg);
-      }
-      p {
-        /* Color */
-        opacity: 1;
-      }
-      .lang__dropdown::after {
-        /* Color */
-        opacity: 1;
-        /* Other */
-        transform: rotatex(0deg);
-      }
     }
   }
 }

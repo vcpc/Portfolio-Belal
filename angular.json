@@ -26,10 +26,10 @@
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/styles/base",
-                "src/styles/utilities",
-                "src/styles/components",
-                "src/styles/themes"
+                "src/app/styles/base",
+                "src/app/styles/utilities",
+                "src/app/styles/components",
+                "src/app/styles/themes"
               ]
             },
             "assets": ["src/favicon.ico", "src/assets"],

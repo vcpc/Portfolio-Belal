@@ -1,0 +1,17 @@
+/* Main Color */
+$background: #282c33;
+$gray: #abb2bf;
+$primary: #c778dd;
+
+.text-main {
+  /* Color */
+  color: $primary;
+}
+.bg-main {
+  /* Color */
+  background-color: $background;
+}
+.text-main-secondary {
+  /* Color */
+  color: $gray;
+}
