@@ -69,13 +69,13 @@
       /* Other */
       overflow: hidden;
     }
+    .chevron-down.show {
+      /* Other */
+      transform: rotate(-180deg);
+    }
     .lang__dropdown.show {
       /* Color */
       opacity: 1;
-      .chevron-down {
-        /* Other */
-        transform: rotate(-180deg);
-      }
       p {
         /* Color */
         opacity: 1;

@@ -32,11 +32,14 @@ export class NavbarComponent implements AfterViewInit {
     this.closeNavBarBox();
   }
 
-  activeBtn(e: any): void {
+  activeBtn(navbar: HTMLElement, navbarList: HTMLUListElement, e: any): void {
     this.navbar__link.toArray().forEach((el) => {
       this._Renderer2.removeClass(el.nativeElement, 'active');
     });
     e.target.classList.add('active');
+    navbar.classList.remove('show');
+    navbarList.classList.add('d-none');
+    this.navbarShowFlag = true;
   }
 
   closeNavBarBox(): void {
@@ -60,16 +63,22 @@ export class NavbarComponent implements AfterViewInit {
     navbar.classList.add('show');
     this.navbarShowFlag = false;
   }
-  openLangDropdown(el: HTMLDivElement): void {
+  openLangDropdown(el: HTMLDivElement, langChevron: HTMLDivElement): void {
     el.classList.toggle('show');
     el.classList.toggle('d-none');
+    langChevron.classList.toggle('show');
   }
-  closeLangDropdown(el: HTMLDivElement, e: any): void {
+  closeLangDropdown(
+    el: HTMLDivElement,
+    langChevron: HTMLDivElement,
+    e: any
+  ): void {
     const currentLang = this.siteLang;
     const changedLanguage = e.target.innerHTML;
     e.target.innerHTML = currentLang;
     this.siteLang = changedLanguage;
     el.classList.remove('show');
     el.classList.add('d-none');
+    langChevron.classList.remove('show');
   }
 }

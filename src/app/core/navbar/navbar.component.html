@@ -1,4 +1,4 @@
-<div class="container fixed-top">
+<div class="container fixed-top ps-3 pe-3">
   <nav #navbar class="navbar align-items-start flex-wrap flex-sm-nowrap bg-main">
     <a class="fw-bold text-decoration-none text-white" href="#">
       <img class="navbar__logo" src="./assets/logo-solid.svg" alt="logo-solid">
@@ -18,40 +18,40 @@
     <ul #navbarList class="navbar__list list-unstyled d-none d-sm-flex mb-0
       align-self-start h-100 mt-3 mt-sm-0 position-relative">
       <li class="pb-4 pb-sm-0 navbar__item">
-        <a #navbar__link (click)="activeBtn($event)"
-          class="navbar__link ps-2 ps-sm-3 text-main-secondary text-decoration-none active" href="#"><span
+        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
+          class="navbar__link ps-sm-3 text-main-secondary text-decoration-none active" href="#"><span
             class="text-main">#</span>home</a>
       </li>
       <li class="pb-4 pb-sm-0  navbar__item">
-        <a #navbar__link (click)="activeBtn($event)"
-          class="navbar__link ps-2 ps-sm-3 text-main-secondary text-decoration-none" href="#">
+        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
+          class="navbar__link ps-sm-3 text-main-secondary text-decoration-none" href="#">
           <span class="text-main">#</span>works
         </a>
       </li>
       <li class="pb-4 pb-sm-0  navbar__item">
-        <a #navbar__link (click)="activeBtn($event)"
-          class="navbar__link ps-2 ps-sm-3 text-main-secondary text-decoration-none" href="#">
+        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
+          class="navbar__link ps-sm-3 text-main-secondary text-decoration-none" href="#">
           <span class="text-main">#</span>about-me
         </a>
       </li>
       <li class="pb-4 pb-sm-0  navbar__item">
-        <a #navbar__link (click)="activeBtn($event)"
-          class="navbar__link ps-2 ps-sm-3 text-main-secondary text-decoration-none" href="#">
+        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
+          class="navbar__link ps-sm-3 text-main-secondary text-decoration-none" href="#">
           <span class="text-main">#</span>contacts
         </a>
       </li>
-      <li class="pb-4 pb-sm-0 ps-2 ps-sm-3 align-self-end navbar__item">
+      <li class="pb-4 pb-sm-0 ps-sm-3 align-self-end navbar__item">
         <div class="navbar__lang navbar__link text-main-secondary">
           <div class="position-relative">
-            <div (click)="openLangDropdown(lang__dropdown)">
-              <span class="text-main">#</span>
-              <span>{{siteLang}}</span>
-              <span><img class="ps-1 chevron-down" src="./assets/lang-arrow.svg" alt="language-arrow"></span>
+            <div (click)="openLangDropdown(lang__dropdown,langChevron)">
+              <span class="fw-semibold">{{siteLang}}</span>
+              <span class="ps-1"><img #langChevron class="chevron-down" src="./assets/lang-arrow.svg"
+                  alt="language-arrow"></span>
             </div>
             <div #lang__dropdown class="lang__dropdown hide bg-main text-center d-none">
               <div class="lang-dropdown_border">
-                <p (click)="closeLangDropdown(lang__dropdown,$event)" class="m-0">RU</p>
-                <p (click)="closeLangDropdown(lang__dropdown,$event)" class="m-0">UA</p>
+                <p (click)="closeLangDropdown(lang__dropdown,langChevron,$event)" class="m-0">RU</p>
+                <p (click)="closeLangDropdown(lang__dropdown,langChevron,$event)" class="m-0">UA</p>
               </div>
             </div>
           </div>
