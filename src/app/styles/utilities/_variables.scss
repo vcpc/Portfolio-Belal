@@ -1,61 +1,28 @@
-$bg-main: #282c33;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
 $primary: #c778dd;
 $gray: #abb2bf;
 $font: "Fira Code";
 
-.home {
-  $refer: &;
-
+.bg-main {
   /* Color */
-  background-color: $bg-main;
+  background-color: $primary;
+}
 
-  &__heading {
-    h1 {
-      /* Color */
-      color: $primary;
-    }
+.color-main {
+  /* Color */
+  color: $primary;
+}
 
-    p {
-      /* Color */
-      color: $gray;
-    }
+.gray-color {
+  /* Color */
+  color: $gray;
+}
 
-    #{$refer}__btn {
-      /* Box Model */
-      border: 1px solid $primary;
+.primaryBorder {
+  border: 1px solid $primary;
+}
 
-      &:hover {
-        /* Box Model */
-        background-color: rgba($color: $primary, $alpha: 0.5);
-      }
-    }
-  }
-
-  &__frame {
-    /* Color */
-    color: $primary;
-
-    /* Box Model */
-    border: 1px solid $gray;
-  }
-
-  p {
-    /* Color */
-    color: $gray;
-  }
-
-  #{$refer}__box {
-    /* box Model */
-    border: 1px solid $primary;
-
-    /* Color */
-    background-color: $primary;
-  }
-
-  .qoute {
-    p {
-      /* box Model */
-      border: 1px solid $gray;
-    }
-  }
+.grayBorder {
+  border: 1px solid $gray;
 }
