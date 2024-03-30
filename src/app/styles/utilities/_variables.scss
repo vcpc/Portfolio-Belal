@@ -43,11 +43,19 @@ $font: "Fira Code";
     /* Color */
     color: $gray;
   }
+
   #{$refer}__box {
     /* box Model */
     border: 1px solid $primary;
 
     /* Color */
     background-color: $primary;
+  }
+
+  .qoute {
+    p {
+      /* box Model */
+      border: 1px solid $gray;
+    }
   }
 }
