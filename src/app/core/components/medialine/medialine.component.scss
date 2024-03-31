@@ -1,14 +1,27 @@
-.media-line {
-  height: 191px;
-  width: 1px;
-}
-.mediaIcons {
-  li {
-    width: 32px;
-    height: 32px;
-    margin: 15px;
+
+.medialina {
+  /* 
+  * Helper Media Screen to make media line disappear in the small screens
+  */
+  @media screen and (max-width: 599px) {
+    & {
+      display: none;
+    }
   }
-}
-.media-line_container {
-  left: 32.5px;
+  .media-line {
+    /* Box Model */
+    height: 191px;
+    width: 1px;
+  }
+  .mediaIcons {
+    li {
+      /* Box Model */
+      width: 32px;
+      height: 32px;
+    }
+  }
+  .media-line_container {
+    /* Layout */
+    left: 32.5px;
+  }
 }
