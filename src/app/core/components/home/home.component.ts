@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-// import { QouteComponent } from '../qoute/qoute.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  // imports: [QouteComponent],
+  imports: [RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
