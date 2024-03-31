@@ -2,13 +2,23 @@
 
 .navbar {
   /** 
-* Helper to remove navbar padding top from small screens
+* Helper to increase navbar padding top from small screens
 * 1. change box model 
 */
   @media screen and (min-width: 599px) {
     & {
       /* Box Model */ /* 1 */
       padding-top: 32px;
+    }
+  }
+  /** 
+* Helper to decrease navbar padding top from small screens
+* 1. change box model 
+*/
+  @media screen and (max-width: 599px) {
+    & {
+      /* Box Model */ /* 1 */
+      padding-top: 19px;
     }
   }
   /* color */
@@ -21,7 +31,7 @@
     /* other */
     @include transition(0.3s, All);
   }
-  &__link.active {
+  a.navbar__link:hover {
     /* Color */
     color: white;
   }

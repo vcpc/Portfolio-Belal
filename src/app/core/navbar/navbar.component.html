@@ -14,36 +14,33 @@
     </button>
     }
     @if (!navbarShowFlag) {
-    <button (click)="closeNavBar(navbar,navbarList)" class="d-block nabbar-burgarBtn border-0 
+    <button (click)="closeNavBar(navbar,navbarList)" class="d-block p-0 nabbar-burgarBtn border-0 
       bg-transparent w-50 text-end">
       <img src="./assets/close_btn.svg" alt="close_btn">
     </button>
     }
     <ul #navbarList class="navbar__list list-unstyled mb-0
-      align-self-start h-100 mt-3 mt-sm-0 position-relative">
+      align-self-start h-100 position-relative">
       <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
-        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)" 
-        [ngClass]="{'ps-32': navbarShowFlag}"
-          class="navbar__link text-main-secondary text-decoration-none active" href="#"><span
+        <a [ngClass]="{'ps-32': navbarShowFlag}"
+          class="navbar__link text-main-secondary 
+                text-decoration-none text-white" href="#"><span
             class="text-main">#</span>home</a>
       </li>
       <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
-        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)" 
-        [ngClass]="{'ps-32': navbarShowFlag}" 
+        <a [ngClass]="{'ps-32': navbarShowFlag}" 
         class="navbar__link text-main-secondary text-decoration-none" href="#">
           <span class="text-main">#</span>works
         </a>
       </li>
       <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
-        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)" 
-        [ngClass]="{'ps-32': navbarShowFlag}" 
+        <a [ngClass]="{'ps-32': navbarShowFlag}" 
         class="navbar__link text-main-secondary text-decoration-none" href="#">
           <span class="text-main">#</span>about-me
         </a>
       </li>
       <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
-        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)" 
-        [ngClass]="{'ps-32': navbarShowFlag}" 
+        <a [ngClass]="{'ps-32': navbarShowFlag}" 
         class="navbar__link text-main-secondary text-decoration-none" href="#">
           <span class="text-main">#</span>contacts
         </a>
@@ -67,7 +64,7 @@
         </div>
       </li>
       <li [ngClass]="{'d-flex': !navbarShowFlag , 'd-none': navbarShowFlag }" 
-      class="position-absolute start-50 bottom-0 translate-middle mb-5">
+      class="position-absolute start-50 bottom-0 translate-middle">
         <ul class="navbar__socialIcons list-unstyled m-0">
           <li class="mx-2">
             <a class="text-main-secondary w-100" href="#">
