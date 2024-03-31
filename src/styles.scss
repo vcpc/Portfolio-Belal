@@ -1,3 +1,7 @@
 @import "variables";
 @import "typography";
 @import "btn";
+body {
+  background-color: #282c33 !important;
+  min-height: 100vh;
+}
