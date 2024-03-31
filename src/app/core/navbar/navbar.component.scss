@@ -5,7 +5,7 @@
 * Helper to remove navbar padding top from small screens
 * 1. change box model 
 */
-  @media screen and (min-width: 567px) {
+  @media screen and (min-width: 599px) {
     & {
       /* Box Model */ /* 1 */
       padding-top: 32px;
@@ -122,7 +122,7 @@
 * 1. change box model 
 * 2. change anchors text 
 */
-@media (max-width: 567px) {
+@media (max-width: 599px) {
   .navbar__list {
     /* Box Model */ /* 1 */
     width: 100%;
@@ -139,13 +139,28 @@
   }
 }
 /** 
-* Helper to change the the navbar items text in small screens
+* Helper to change the the navbar links padding
+1. responsive from 768px screens and above
+2. responsive from 767px screens and smaller
 */
-@media (max-width: 767px) {
+@media (min-width: 768px) { /* 1 */
   .navbar {
-    .navbar-link {
-      /* Box Model */
-      padding-left: 16px;
+    li {
+      .ps-32 {
+        /* Box Model */
+      padding-left: 32px;
+      }
     }
   }
 }
+@media (max-width: 767px) { /* 2 */
+  .navbar {
+    li {
+      .ps-32 {
+        /* Box Model */
+      padding-left: 16px;
+      }
+    }
+  }
+}
+

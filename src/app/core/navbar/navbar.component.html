@@ -1,47 +1,56 @@
 <div class="container fixed-top ps-3 pe-3">
-  <nav #navbar class="navbar align-items-start flex-wrap flex-sm-nowrap bg-main">
-    <a class="fw-bold text-decoration-none text-white" href="#">
+  <nav #navbar class="navbar align-items-start flex-wrap bg-main">
+    <a [ngStyle]="{'padding-bottom': !navbarShowFlag ? '55px' :''}" 
+    class="fw-bold text-decoration-none text-white"
+      href="#">
       <img class="navbar__logo" src="./assets/logo-solid.svg" alt="logo-solid">
       <span class="ps-2">Elias</span>
     </a>
     @if (navbarShowFlag) {
-    <button (click)="openNavBar(navbar,navbarList)" class="d-block d-sm-none border-0 bg-transparent">
+    <button (click)="openNavBar(navbar,navbarList)" 
+    [ngClass]="{'d-none': showOpenBtn , 'd-block': !showOpenBtn}"
+      class="border-0 bg-transparent">
       <img src="./assets/burger_btn.svg" alt="burger_btn">
     </button>
     }
     @if (!navbarShowFlag) {
-    <button (click)="closeNavBar(navbar,navbarList)" class="d-block d-sm-none  nabbar-burgarBtn border-0 
+    <button (click)="closeNavBar(navbar,navbarList)" class="d-block nabbar-burgarBtn border-0 
       bg-transparent w-50 text-end">
       <img src="./assets/close_btn.svg" alt="close_btn">
     </button>
     }
-    <ul #navbarList class="navbar__list list-unstyled d-none d-sm-flex mb-0
+    <ul #navbarList class="navbar__list list-unstyled mb-0
       align-self-start h-100 mt-3 mt-sm-0 position-relative">
-      <li class="pb-4 pb-sm-0 navbar__item">
-        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
-          class="navbar__link ps-sm-3 text-main-secondary text-decoration-none active" href="#"><span
+      <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
+        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)" 
+        [ngClass]="{'ps-32': navbarShowFlag}"
+          class="navbar__link text-main-secondary text-decoration-none active" href="#"><span
             class="text-main">#</span>home</a>
       </li>
-      <li class="pb-4 pb-sm-0  navbar__item">
-        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
-          class="navbar__link ps-sm-3 text-main-secondary text-decoration-none" href="#">
+      <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
+        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)" 
+        [ngClass]="{'ps-32': navbarShowFlag}" 
+        class="navbar__link text-main-secondary text-decoration-none" href="#">
           <span class="text-main">#</span>works
         </a>
       </li>
-      <li class="pb-4 pb-sm-0  navbar__item">
-        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
-          class="navbar__link ps-sm-3 text-main-secondary text-decoration-none" href="#">
+      <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
+        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)" 
+        [ngClass]="{'ps-32': navbarShowFlag}" 
+        class="navbar__link text-main-secondary text-decoration-none" href="#">
           <span class="text-main">#</span>about-me
         </a>
       </li>
-      <li class="pb-4 pb-sm-0  navbar__item">
-        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
-          class="navbar__link ps-sm-3 text-main-secondary text-decoration-none" href="#">
+      <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
+        <a #navbar__link (click)="activeBtn(navbar,navbarList,$event)" 
+        [ngClass]="{'ps-32': navbarShowFlag}" 
+        class="navbar__link text-main-secondary text-decoration-none" href="#">
           <span class="text-main">#</span>contacts
         </a>
       </li>
-      <li class="pb-4 pb-sm-0 ps-sm-3 align-self-end navbar__item">
-        <div class="navbar__lang navbar__link text-main-secondary">
+      <li [ngClass]="{'pb-4': !navbarShowFlag}" 
+        class="align-self-end navbar__item">
+        <div class="navbar__lang navbar__link text-main-secondary" [ngClass]="{'ps-32': navbarShowFlag}">
           <div class="position-relative">
             <div (click)="openLangDropdown(lang__dropdown,langChevron)">
               <span class="fw-semibold">{{siteLang}}</span>
@@ -57,20 +66,20 @@
           </div>
         </div>
       </li>
-      <li class="d-flex d-sm-none position-absolute 
-      start-50 bottom-0 translate-middle mb-5">
+      <li [ngClass]="{'d-flex': !navbarShowFlag , 'd-none': navbarShowFlag }" 
+      class="position-absolute start-50 bottom-0 translate-middle mb-5">
         <ul class="navbar__socialIcons list-unstyled m-0">
-          <li>
+          <li class="mx-2">
             <a class="text-main-secondary w-100" href="#">
               <img class="w-100" src="./assets/brands/Github.svg" alt="Github">
             </a>
           </li>
-          <li>
+          <li class="mx-2">
             <a class="text-main-secondary w-100" href="#">
               <img class="w-100" src="./assets/brands/Dribble.svg" alt="Github">
             </a>
           </li>
-          <li>
+          <li class="mx-2">
             <a class="text-main-secondary w-100" href="#">
               <img class="w-100" src="./assets/brands/Figma.svg" alt="Github">
             </a>

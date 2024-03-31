@@ -1,4 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -12,12 +13,13 @@ import {
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements AfterViewInit {
   navbarShowFlag: boolean = true;
+  showOpenBtn: boolean = true;
   siteLang: string = 'EN';
   constructor(
     private _BreakpointObserver: BreakpointObserver,
@@ -32,6 +34,25 @@ export class NavbarComponent implements AfterViewInit {
     this.closeNavBarBox();
   }
 
+  closeNavBarBox(): void {
+    this._BreakpointObserver
+      .observe(Breakpoints.HandsetPortrait)
+      .subscribe((result) => {
+        console.log(result);
+        if (!result.matches) {
+          this.navbarShowFlag = true;
+          this.showOpenBtn = true;
+          this._Renderer2.removeClass(this.navbar.nativeElement, 'show');
+          this._Renderer2.removeClass(this.navbarList.nativeElement, 'd-none');
+          this._Renderer2.addClass(this.navbarList.nativeElement, 'd-flex');
+        } else if (result.matches) {
+          this.showOpenBtn = false;
+          this._Renderer2.removeClass(this.navbarList.nativeElement, 'd-flex');
+          this._Renderer2.addClass(this.navbarList.nativeElement, 'd-none');
+        }
+      });
+  }
+
   activeBtn(navbar: HTMLElement, navbarList: HTMLUListElement, e: any): void {
     this.navbar__link.toArray().forEach((el) => {
       this._Renderer2.removeClass(el.nativeElement, 'active');
@@ -42,17 +63,6 @@ export class NavbarComponent implements AfterViewInit {
     this.navbarShowFlag = true;
   }
 
-  closeNavBarBox(): void {
-    this._BreakpointObserver
-      .observe(Breakpoints.HandsetPortrait)
-      .subscribe((result) => {
-        if (!result.matches) {
-          this.navbarShowFlag = true;
-          this._Renderer2.removeClass(this.navbar.nativeElement, 'show');
-          this._Renderer2.addClass(this.navbarList.nativeElement, 'd-none');
-        }
-      });
-  }
   closeNavBar(navbar: HTMLElement, navbarList: HTMLUListElement): void {
     navbar.classList.remove('show');
     navbarList.classList.add('d-none');
