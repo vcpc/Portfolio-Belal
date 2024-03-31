@@ -20,6 +20,7 @@ import {
 export class NavbarComponent implements AfterViewInit {
   navbarShowFlag: boolean = true;
   showOpenBtn: boolean = true;
+  navBarOpen:boolean = true;
   siteLang: string = 'EN';
   constructor(
     private _BreakpointObserver: BreakpointObserver,
@@ -38,14 +39,15 @@ export class NavbarComponent implements AfterViewInit {
     this._BreakpointObserver
       .observe(Breakpoints.HandsetPortrait)
       .subscribe((result) => {
-        console.log(result);
         if (!result.matches) {
           this.navbarShowFlag = true;
           this.showOpenBtn = true;
+          this.navBarOpen = false;
           this._Renderer2.removeClass(this.navbar.nativeElement, 'show');
           this._Renderer2.removeClass(this.navbarList.nativeElement, 'd-none');
           this._Renderer2.addClass(this.navbarList.nativeElement, 'd-flex');
         } else if (result.matches) {
+          this.navBarOpen = true;
           this.showOpenBtn = false;
           this._Renderer2.removeClass(this.navbarList.nativeElement, 'd-flex');
           this._Renderer2.addClass(this.navbarList.nativeElement, 'd-none');
@@ -58,9 +60,11 @@ export class NavbarComponent implements AfterViewInit {
       this._Renderer2.removeClass(el.nativeElement, 'active');
     });
     e.target.classList.add('active');
+    if (this.navBarOpen) {
     navbar.classList.remove('show');
     navbarList.classList.add('d-none');
     this.navbarShowFlag = true;
+    }
   }
 
   closeNavBar(navbar: HTMLElement, navbarList: HTMLUListElement): void {

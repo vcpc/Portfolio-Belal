@@ -31,6 +31,7 @@
     justify-content: center;
     /* Box Model */
     width: 100%;
+    padding-bottom: 36px;
     li {
       /* layout */
       display: flex;
@@ -63,11 +64,15 @@
       right: 0;
       z-index: 2;
       /* Box Model */
+      width: fit-content;
       padding: 8px;
       /* Color */
       opacity: 0;
       /* Other */
       overflow: hidden;
+    }
+    ::selection {
+      background-color: transparent;
     }
     .chevron-down.show {
       /* Other */
