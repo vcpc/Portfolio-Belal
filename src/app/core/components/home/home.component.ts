@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { QouteComponent } from '../qoute/qoute.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [QouteComponent],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
