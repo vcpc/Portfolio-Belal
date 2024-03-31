@@ -17,18 +17,19 @@
 
   &:before {
     /* Positioning */
-    left: 14px;
+    left: 19px;
     transform: translateY(-50%);
     position: absolute;
 
     /* Box Model */
-    width: 41px;
-    height: 28px;
+    width: 25px;
+    height: 20px;
+    padding: 4px 8px;
 
     /* Color */
     background-image: url("../../../../assets/quote.svg");
     background-repeat: no-repeat;
-
+    background-color: #282c33;
     /* Other */
     content: "";
   }
@@ -43,18 +44,19 @@
 
     &:before {
       /* Positioning */
-      right: 14px;
+      right: 16px;
       transform: translateY(-50%);
       position: absolute;
 
       /* Box Model */
-      width: 41px;
-      height: 28px;
+      width: 25px;
+      height: 20px;
+      padding: 4px 8px;
 
       /* Color */
       background-image: url("../../../../assets/quote.svg");
       background-repeat: no-repeat;
-
+      background-color: #282c33;
       /* Other */
       content: "";
     }
