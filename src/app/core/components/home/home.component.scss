@@ -50,8 +50,8 @@
       z-index: 1;
 
       @media (max-width: 500px) {
-        width: 90%;
-        left: 22px;
+        width: 100%;
+        // left: 22px;
       }
     }
 
@@ -68,11 +68,7 @@
       z-index: 1;
       @media (max-width: 500px) {
         /* Box Model */
-        width: 56px;
-        height: 56px;
-        bottom: 155px;
-
-        right: 10px;
+        bottom: 70px;
       }
     }
 
@@ -87,12 +83,7 @@
 
       /* Other */
       @media (max-width: 500px) {
-        /* Box Model */
-        width: 104px;
-        height: 104px;
-
         /* Positioning */
-        top: 69px;
         left: -6px;
       }
       z-index: -1;
