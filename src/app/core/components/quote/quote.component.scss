@@ -15,9 +15,9 @@
 
   /*
   * Helper to increase padding left and right and right diraction for quote to small screen
-  * 1. Change Positions
-  * 2. Change Box Model
-   * 3. Change Text Size
+    * 1. Change Positions
+    * 2. Change Box Model
+    * 3. Change Text Size
 */
   @media screen and (max-width: 567px) {
     & {
@@ -38,9 +38,9 @@
   }
   /*
   * Helper to increase padding left and right and right  diraction for quote  from small screen to medium screen
-  * 1. Change Positions
-  * 2. Change Box Model
-  * 3. Change Text Size
+    * 1. Change Positions
+    * 2. Change Box Model
+    * 3. Change Text Size
 */
   @media screen and (min-width: 568px) and (max-width: 992px) {
     & {
