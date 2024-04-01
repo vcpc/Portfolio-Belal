@@ -20,20 +20,19 @@
     * 3. Change Text Size
 */
   @media screen and (max-width: 567px) {
-    & {
-      /* Postion*/ /* 1 */
-      right: 0px;
+    /* Postion*/
+    right: 0px; /* 1 */
 
-      /* Box Model*/ /* 2 */
-      padding: {
-        left: 20px;
-        right: 20px;
-      }
+    /* Box Model*/
+    padding: {
+      /* 1 */
+      left: 20px;
+      right: 20px;
+    }
 
-      p {
-        /* Text */
-        font-size: 15px;
-      }
+    p {
+      /* Text */
+      font-size: 15px; /* 1 */
     }
   }
   /*
@@ -47,15 +46,16 @@
       /* Postion*/ /* 1 */
       right: 0px;
 
-      /* Box Model*/ /* 2 */
+      /* Box Model*/
       padding: {
+        /* 1 */
         left: 50px;
         right: 50px;
       }
 
       p {
         /* Text */
-        font-size: 15px;
+        font-size: 15px; /* 1 */
       }
     }
   }
@@ -84,8 +84,8 @@
 */
     @media screen and (max-width: 567px) {
       & {
-        /* Postion*/ /* 1 */
-        right: 20px;
+        /* Postion*/
+        right: 20px; /* 1 */
       }
     }
     /*
@@ -94,8 +94,8 @@
 */
     @media screen and (min-width: 568px) and (max-width: 992px) {
       & {
-        /* Postion*/ /* 1 */
-        right: 50px;
+        /* Postion*/
+        right: 50px; /* 1 */
       }
     }
   }
