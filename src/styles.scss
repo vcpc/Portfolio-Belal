@@ -2,3 +2,7 @@
 @import "variables.scss";
 @import "base.scss", "typography.scss";
 @import "mixins.scss";
+
+body {
+  background-color: #282c33;
+}

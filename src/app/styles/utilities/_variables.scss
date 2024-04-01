@@ -23,3 +23,10 @@ $font: "Fira Code";
   /* Color */
   color: $gray;
 }
+.primaryBorder {
+  border: 1px solid $primary;
+}
+
+.grayBorder {
+  border: 1px solid $gray;
+}
