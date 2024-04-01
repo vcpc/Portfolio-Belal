@@ -14,7 +14,7 @@
   }
 
   /*
-  * Helper to increase padding left and right and right diraction for quote to small screen
+* Helper to change the qoute in small screens
     * 1. Change Positions
     * 2. Change Box Model
     * 3. Change Text Size
@@ -37,7 +37,7 @@
     }
   }
   /*
-  * Helper to increase padding left and right and right  diraction for quote  from small screen to medium screen
+* Helper to change the qoute in medium and large screen
     * 1. Change Positions
     * 2. Change Box Model
     * 3. Change Text Size
@@ -79,7 +79,7 @@
     border-top: 0;
 
     /*
-    * Helper to increase direction right at quote author from small screens
+* Helper to change the qoute__author in small screen
       * 1. Change Positions
 */
     @media screen and (max-width: 567px) {
@@ -89,7 +89,7 @@
       }
     }
     /*
-    * Helper to increase direction right at quote author from small screen to medium screen
+* Helper to change the qoute__author in medium and large screen
       * 1. Change Positions
 */
     @media screen and (min-width: 568px) and (max-width: 992px) {
