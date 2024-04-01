@@ -1,0 +1,186 @@
+@import "mixins.scss";
+
+.navbar {
+  /** 
+* Helper to increase navbar padding top from small screens
+* 1. change box model 
+*/
+  @media screen and (min-width: 599px) {
+    & {
+      /* Box Model */ /* 1 */
+      padding-top: 32px;
+    }
+  }
+  /** 
+* Helper to decrease navbar padding top from small screens
+* 1. change box model 
+*/
+  @media screen and (max-width: 599px) {
+    & {
+      /* Box Model */ /* 1 */
+      padding-top: 19px;
+    }
+  }
+  /* color */
+  &__logo {
+    /* Box Model */
+    width: 16px;
+    height: 16px;
+  }
+  &__link {
+    /* other */
+    @include transition(0.3s, All);
+  }
+  &__link.active {
+    /* Color */
+    color: white;
+    font-weight: 500;
+  }
+  a.navbar__link:hover {
+    /* Color */
+    color: white;
+  }
+  &__socialIcons {
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    /* Box Model */
+    width: 100%;
+    padding-bottom: 36px;
+    li {
+      /* layout */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Box Model */
+      width: 64px;
+      height: 64px;
+      /* Text */
+      font-size: 32px;
+    }
+  }
+
+  &__lang {
+    /* Layout */
+    position: relative;
+    /* Other */
+    cursor: pointer;
+    p {
+      /* Color */
+      opacity: 0;
+      /* Other */
+      transition: 0.3s all;
+    }
+    .lang__dropdown {
+      /* Layout */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      /* Box Model */
+      width: fit-content;
+      padding: 8px;
+      /* Color */
+      opacity: 0;
+      /* Other */
+      overflow: hidden;
+    }
+    ::selection {
+      background-color: transparent;
+    }
+    .chevron-down.show {
+      /* Other */
+      transform: rotate(-180deg);
+    }
+    .lang__dropdown.show {
+      /* Color */
+      opacity: 1;
+      p {
+        /* Color */
+        opacity: 1;
+      }
+    }
+    .lang__dropdown.show::after {
+      /* Color */
+      opacity: 1;
+      /* Other */
+      transform: rotatex(0deg);
+      animation: borderLayer forwards 0s 0.3s;
+    }
+    @keyframes borderLayer {
+      from {
+        z-index: 1;
+      }
+      to {
+        z-index: -1;
+      }
+    }
+    .lang__dropdown::after {
+      /* Layout */
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* Box Model */
+      border: 1px solid #abb2bf;
+      /* Color */
+      opacity: 0;
+      /* Other */
+      transform-origin: top;
+      transform: rotatex(70deg) translateY(-5px);
+      transition: 0.3s all;
+    }
+    .chevron-down {
+      /* Other */
+      transition: 0.3s all;
+    }
+  }
+}
+
+/** 
+* Helper to change the the navbar in small screens
+* 1. change box model 
+* 2. change anchors text 
+*/
+@media (max-width: 599px) {
+  .navbar__list {
+    /* Box Model */ /* 1 */
+    width: 100%;
+    height: 100%;
+  }
+  .navbar__item {
+    /* Text */
+    font-size: 32px; /* 2 */
+  }
+  .navbar.show {
+    /* Box Model */
+    height: 100vh;
+    width: 100%;
+  }
+}
+/** 
+* Helper to change the the navbar links padding
+1. responsive from 768px screens and above
+2. responsive from 767px screens and smaller
+*/
+@media (min-width: 768px) { /* 1 */
+  .navbar {
+    li {
+      .ps-32 {
+        /* Box Model */
+      padding-left: 32px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) { /* 2 */
+  .navbar {
+    li {
+      .ps-32 {
+        /* Box Model */
+      padding-left: 16px;
+      }
+    }
+  }
+}
+

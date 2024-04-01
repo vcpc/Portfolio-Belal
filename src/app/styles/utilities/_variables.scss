@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
+/* Main Color */
+$background: #282c33;
+$gray: #abb2bf;
+$primary: #c778dd;
+/* Main Font */
+$font: "Fira Code";
+
+.text-main {
+  /* Color */
+  color: $primary;
+}
+.bg-main {
+  /* Color */
+  background-color: $background;
+}
+.text-main-secondary {
+  /* Color */
+  color: $gray;
+}
