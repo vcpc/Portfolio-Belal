@@ -1,38 +1,4 @@
 .qoute {
-  /**
-* Helper to increase quote padding left and right with with diraction right from small screens
-* 1. change box model
-*/
-  @media screen and (max-width: 598px) {
-    & {
-      /* Postion*/ /* 1 */
-      right: 0px;
-
-      /* Box Model*/ /* 2 */
-      padding: {
-        left: 20px;
-        right: 20px;
-      }
-    }
-  }
-
-  /**
-* Helper to increase quote padding left and right diraction right from small screens
-* 1. change box model
-*/
-  @media screen and (min-width: 599px) and (max-width: 992px) {
-    & {
-      /* Postion*/ /* 1 */
-      right: 0px;
-
-      /* Box Model*/ /* 2 */
-      padding: {
-        left: 50px;
-        right: 50px;
-      }
-    }
-  }
-
   /* box Model */
   max-width: 712px;
   padding: {
@@ -47,6 +13,53 @@
     font-size: 23px;
   }
 
+  /*
+  * Helper to increase padding left and right and right diraction for quote to small screen
+  * 1. Change Positions
+  * 2. Change Box Model
+   * 3. Change Text Size
+*/
+  @media screen and (max-width: 567px) {
+    & {
+      /* Postion*/ /* 1 */
+      right: 0px;
+
+      /* Box Model*/ /* 2 */
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+
+      p {
+        /* Text */
+        font-size: 15px;
+      }
+    }
+  }
+  /*
+  * Helper to increase padding left and right and right  diraction for quote  from small screen to medium screen
+  * 1. Change Positions
+  * 2. Change Box Model
+  * 3. Change Text Size
+*/
+  @media screen and (min-width: 568px) and (max-width: 992px) {
+    & {
+      /* Postion*/ /* 1 */
+      right: 0px;
+
+      /* Box Model*/ /* 2 */
+      padding: {
+        left: 50px;
+        right: 50px;
+      }
+
+      p {
+        /* Text */
+        font-size: 15px;
+      }
+    }
+  }
+
   &__qoutes {
     /* box Model */
     padding: 32px;
@@ -56,23 +69,6 @@
   right: 16px;
 
   &__author {
-    /**
-* Helper to increase quote auther direction right from small screens
-* 1.Position
-*/
-    @media screen and (max-width: 598px) {
-      & {
-        /* Postion*/ /* 1 */
-        right: 20px;
-      }
-    }
-    @media screen and (min-width: 599px) and (max-width: 992px) {
-      & {
-        /* Postion*/ /* 1 */
-        right: 50px;
-      }
-    }
-
     /* Positioning */
     bottom: 0px;
     transform: translateY(100%);
@@ -81,6 +77,27 @@
     /* Box Model */
     padding: 16px;
     border-top: 0;
+
+    /*
+    * Helper to increase direction right at quote author from small screens
+      * 1. Change Positions
+*/
+    @media screen and (max-width: 567px) {
+      & {
+        /* Postion*/ /* 1 */
+        right: 20px;
+      }
+    }
+    /*
+    * Helper to increase direction right at quote author from small screen to medium screen
+      * 1. Change Positions
+*/
+    @media screen and (min-width: 568px) and (max-width: 992px) {
+      & {
+        /* Postion*/ /* 1 */
+        right: 50px;
+      }
+    }
   }
 
   &__img {
