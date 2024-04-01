@@ -9,11 +9,12 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
+import { RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -53,6 +54,18 @@ export class NavbarComponent implements AfterViewInit {
           this._Renderer2.addClass(this.navbarList.nativeElement, 'd-none');
         }
       });
+  }
+
+  activeBtn(navbar: HTMLElement, navbarList: HTMLUListElement, e: any): void {
+    this.navbar__link.toArray().forEach((el) => {
+      this._Renderer2.removeClass(el.nativeElement, 'active');
+    });
+    e.target.classList.add('active');
+    if (this.navBarOpen) {
+    navbar.classList.remove('show');
+    navbarList.classList.add('d-none');
+    this.navbarShowFlag = true;
+    }
   }
 
   closeNavBar(navbar: HTMLElement, navbarList: HTMLUListElement): void {
