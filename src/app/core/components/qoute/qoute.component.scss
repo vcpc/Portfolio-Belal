@@ -8,57 +8,48 @@
   text-align: center;
 
   p {
-    /* box Model */
-    padding: 32px;
-
     /* Text */
     font-size: 23px;
   }
 
-  &:before {
-    /* Positioning */
-    left: 19px;
-    transform: translateY(-50%);
-    position: absolute;
-
-    /* Box Model */
-    width: 25px;
-    height: 20px;
-    padding: 4px 8px;
-
-    /* Color */
-    background-image: url("../../../../assets/quote.svg");
-    background-repeat: no-repeat;
-    background-color: #282c33;
-    /* Other */
-    content: "";
+  &__qoutes {
+    /* box Model */
+    padding: 32px;
   }
+
+  /* Positions */
+  right: 16px;
+
   &__author {
     /* Positioning */
-    bottom: -100px;
+    bottom: 0px;
+    transform: translateY(100%);
     right: 0px;
-    p {
-      /* box Model */
-      border-top: 0;
-    }
 
-    &:before {
-      /* Positioning */
-      right: 16px;
-      transform: translateY(-50%);
-      position: absolute;
+    /* Box Model */
+    padding: 16px;
+    border-top: 0;
+  }
 
-      /* Box Model */
-      width: 25px;
-      height: 20px;
-      padding: 4px 8px;
+  &__img {
+    /* Box Model */
+    width: 41px;
+    height: 28px;
+    padding: 4px 8px;
 
-      /* Color */
-      background-image: url("../../../../assets/quote.svg");
-      background-repeat: no-repeat;
-      background-color: #282c33;
-      /* Other */
-      content: "";
-    }
+    transform: translateY(-50%);
+    top: 0;
+
+    /* Color */
+    background-color: #282c33;
+  }
+
+  &__img.author {
+    /* Positioning */
+    right: 16px;
+  }
+
+  &__img.quotes {
+    left: 19px;
   }
 }
