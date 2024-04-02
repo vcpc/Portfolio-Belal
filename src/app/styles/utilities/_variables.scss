@@ -30,15 +30,10 @@ $font: "Fira Code";
   color: $gray;
 }
 
-.color-main {
-  /* Color */
-  color: $primary;
-}
-
-.primaryBorder {
+.border-primary {
   border: 1px solid $primary;
 }
 
-.grayBorder {
+.border-secondary {
   border: 1px solid $gray;
 }
