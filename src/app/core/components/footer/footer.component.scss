@@ -1,0 +1,27 @@
+.footer {
+  border-top: 1px solid #ABB2BF;
+  &__Content {
+    /* Box Model */
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  &__logo {
+    /* Box Model */
+    width: 16px;
+    height: 16px;
+    margin-right: 9px;
+  }
+  &__socialIcons {
+    /* Box Model */
+    margin-top: 12px;
+    li {
+    /* Box Model */
+    width: 32px;
+    height: 32px;
+    }
+  }
+  &__copyRight {
+    /* Box Modle */
+    margin-top: 48px;
+  }
+}
