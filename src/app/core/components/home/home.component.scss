@@ -8,6 +8,15 @@
   /* Color */
   background-color: #282c33;
 
+  /*
+ * Helper to change the home in small screens
+  * 1. change box model
+*/
+  @media (max-width: 500px) {
+    /* Box Model */
+    padding-top: 18px; /* 1 */
+  }
+
   &__row-mb {
     /* Position*/
     margin: auto {
@@ -58,12 +67,12 @@
       z-index: 1;
 
       /*
- * Helper to change the the home__images in small screens
+ * Helper to change the  home__images in small screens
   * 1. change box model
 */
       @media (max-width: 500px) {
         /* Box Model */
-        max-width: 307px; /* 1 */
+        max-width: 313px; /* 1 */
         height: 260px; /* 2 */
       }
     }
@@ -81,7 +90,7 @@
       z-index: 1;
 
       /*
- * Helper to change the the home__dots in small screens
+ * Helper to change the  home__dots in small screens
   * 1. change box model
   * 2. change Position
 */
@@ -108,7 +117,7 @@
       z-index: -1;
 
       /*
- * Helper to change the the home__outline in small screens
+ * Helper to change the  home__outline in small screens
   * 1. change box model
   * 2. change Position
 */
@@ -131,7 +140,7 @@
     font-weight: 500;
 
     /*
- * Helper to change the the home__frame in small screens
+ * Helper to change the  home__frame in small screens
   * 1. change Position
 */
     @media (min-width: 501px) {
@@ -142,7 +151,7 @@
     }
 
     /*
- * Helper to change the the home__outline in small screens
+ * Helper to change the  home__outline in small screens
   * 1. change box model
   * 1. change Position
 */
