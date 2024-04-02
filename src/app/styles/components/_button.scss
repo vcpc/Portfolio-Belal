@@ -1,15 +1,17 @@
-button.btn-main-primary {
+button.btn-main-primary,
+.btn:active {
   /* Box Model */
   padding: 8px 16px;
-  border: 1px solid #c778dd;
+  border: 1px solid $primary;
   border-radius: 0;
+  color: white;
 
   /* Other */
   transition: all 300ms ease-out;
-
   &:hover {
     /* Color */
     background-color: rgba($color: #c778dd, $alpha: 20%);
     border: 1px solid #c778dd;
+    color: white;
   }
 }
