@@ -36,10 +36,9 @@
 
     p {
       /* Box Model */
-      max-width: 90%;
       margin: auto {
         left: 0;
-        start: 0;
+        right: 0;
         top: 32px;
         bottom: 24px;
       }
