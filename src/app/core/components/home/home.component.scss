@@ -69,8 +69,15 @@
         /* Box Model */ /* 2 */
         max-width: 313px;
         height: 260px;
-        margin: auto;
       }
+    }
+    /*
+ * Helper to change the home__images in small screens to be center
+ * 1. change box model
+*/
+    @media (max-width: 360px) {
+      /* Box Model */ /* 2 */
+      margin: auto;
     }
 
     #{$refer}__dots {
