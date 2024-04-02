@@ -18,10 +18,8 @@ ngAfterViewInit(): void {
   this._BreakpointObserver.observe(Breakpoints.HandsetPortrait).subscribe((result) => {
     if (result.matches) {
       this.closedNavBarFlag = true
-      console.log('true');
     } else if (!result.matches) {
       this.closedNavBarFlag = false
-      console.log('false');
     }
   })
 
