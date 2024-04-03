@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, HostListener } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent implements AfterViewInit {
   closedNavBarFlag:boolean = true
-  constructor (private _BreakpointObserver:BreakpointObserver) {}
+  constructor (private _BreakpointObserver:BreakpointObserver , private cdr:ChangeDetectorRef) {}
 
 ngAfterViewInit(): void {
   
@@ -21,6 +21,7 @@ ngAfterViewInit(): void {
     } else if (!result.matches) {
       this.closedNavBarFlag = false
     }
+    this.cdr.detectChanges()
   })
 
 }
