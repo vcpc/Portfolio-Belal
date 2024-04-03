@@ -12,13 +12,23 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   mobileMedia: boolean = false;
 
-  constructor(private responsive: BreakpointObserver) {}
+  constructor(private _breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() {
-    this.responsive.observe(Breakpoints.HandsetPortrait).subscribe((result) => {
-      if (result.matches) {
-        this.mobileMedia = true;
-      }
-    });
+    this.handleMobile();
+  }
+
+  handleMobile() {
+    this._breakpointObserver
+      .observe(Breakpoints.HandsetPortrait)
+      .subscribe((result) => {
+        if (result.matches) {
+          console.log('true');
+
+          this.mobileMedia = true;
+        } else {
+          this.mobileMedia = false;
+        }
+      });
   }
 }
