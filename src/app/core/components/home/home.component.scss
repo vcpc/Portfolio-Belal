@@ -8,15 +8,6 @@
   /* Color */
   background-color: #282c33;
 
-  /*
- * Helper to change the home in small screens
-  * 1. change box model
-*/
-  @media (max-width: 500px) {
-    /* Box Model */ /* 1 */
-    padding-top: 82px;
-  }
-
   &__row-mb {
     /* Position*/
     margin: auto {
@@ -56,20 +47,6 @@
       height: 386px;
       /* Other */
       z-index: 1;
-
-      /*
- * Helper to change the  home__images in small screens
- * 1. change Positioning
- * 2. change box model
-*/
-      @media (max-width: 500px) {
-        /* Positioning */ /* 1 */
-        left: 12px;
-
-        /* Box Model */ /* 2 */
-        max-width: 313px;
-        height: 260px;
-      }
     }
     /*
  * Helper to change the home__images in small screens to be center
@@ -91,20 +68,6 @@
 
       /* Other */
       z-index: 1;
-
-      /*
- * Helper to change the  home__dots in small screens
-  * 1. change box model
-  * 2. change Position
-*/
-      @media (max-width: 500px) {
-        /* Box Model */ /* 1 */
-        max-width: 56px;
-        height: 56px;
-
-        /* Position */ /* 2 */
-        bottom: 38px;
-      }
     }
 
     #{$refer}__outline {
@@ -118,21 +81,6 @@
 
       /* Other */
       z-index: -1;
-
-      /*
- * Helper to change the  home__outline in small screens
-  * 1. change box model
-  * 2. change Position
-*/
-      @media (max-width: 500px) {
-        /* Box Model */ /* 1 */
-        max-width: 104px;
-        height: 104px;
-
-        /* Positioning */ /* 2*/
-        bottom: 99px;
-        left: -6px;
-      }
     }
   }
 
@@ -152,15 +100,6 @@
       margin: {
         left: 19px;
       }
-    }
-
-    /*
- * Helper to change the  home__outline in small screens
-  * 1. change box model
-*/
-    @media (max-width: 500px) {
-      /* Box Model */ /* 1 */
-      width: 100%;
     }
 
     span {
