@@ -10,14 +10,14 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  smallMedia: boolean = false;
+  mobileMedia: boolean = false;
 
   constructor(private responsive: BreakpointObserver) {}
 
   ngOnInit() {
     this.responsive.observe(Breakpoints.HandsetPortrait).subscribe((result) => {
       if (result.matches) {
-        this.smallMedia = true;
+        this.mobileMedia = true;
       }
     });
   }
