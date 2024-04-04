@@ -23,8 +23,6 @@ export class HomeComponent {
       .observe(Breakpoints.HandsetPortrait)
       .subscribe((result) => {
         if (result.matches) {
-          console.log('true');
-
           this.mobileMedia = true;
         } else {
           this.mobileMedia = false;

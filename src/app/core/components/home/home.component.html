@@ -1,4 +1,9 @@
-<section [ngClass]="{ 'small-media': mobileMedia }" class="home">
+<section
+  [ngClass]="{
+    'small-media': mobileMedia
+  }"
+  class="home bg-main"
+>
   <div class="container px-3">
     <div
       class="row gx-2 align-items-center justify-content-between home__row-mb"
@@ -6,9 +11,9 @@
       <div class="col-lg-6">
         <div class="home__heading">
           <h1 class="mb-0 pe-1 p-md-0 text-white">
-            Elias is a <span class="color-main">web designer</span>
+            Elias is a <span class="text-main-primary">web designer</span>
             and
-            <span class="color-main"> front-end developer </span>
+            <span class="text-main-primary"> front-end developer </span>
           </h1>
           <p class="mb-4 text-main-secondary">
             He crafts responsive websites where technologies meet creativity
@@ -45,7 +50,7 @@
           </figure>
           <div
             [ngClass]="{ 'small-media': mobileMedia }"
-            class="home__frame p-2 d-flex align-items-center gap-2 color-main border-secondary"
+            class="home__frame p-2 d-flex align-items-center gap-2 text-main-primary border-secondary"
           >
             <div class="home__box border-primary bg-main-primary"></div>
             <div class="home__title d-flex flex-column flex-md-row text-white">

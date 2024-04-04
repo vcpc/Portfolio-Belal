@@ -13,9 +13,6 @@
   padding-top: 123px;
   min-height: 100vh;
 
-  /* Color */
-  background-color: #282c33;
-
   &__heading {
     h1 {
       /* Text  */
@@ -46,6 +43,9 @@
       /* Box Model */ /* 1 */
       max-width: 313px;
       height: 260px;
+
+      /* Position */
+      margin: auto;
     }
 
     #{$refer}__main {
