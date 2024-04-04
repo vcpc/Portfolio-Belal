@@ -1,0 +1,36 @@
+<footer class="footer">
+  <div class="footer__Content container">
+    <div 
+      class="d-flex justify-content-between align-items-center"
+      [ngClass]="{'flex-column text-center': closedNavBarFlag}"
+      >
+      <div>
+        <div class="mb-3">
+            <img class="footer__logo" src="./assets/logo-solid.svg" alt="portfolio logo">
+            <span class="text-white me-4 fw-semibold">Elias</span>
+            <span class="text-main-secondary">elias&#64;elias-dev.ml</span>
+        </div>
+        <p class="text-white mb-0"
+        [ngClass]="{'mb-3': closedNavBarFlag}"
+        >
+          Web designer and front-end developer
+        </p>
+      </div>
+      <div>
+        <p class="text-white h4 footer__socialIcons--title" [ngClass]="{'mb-3': closedNavBarFlag}">Media</p>
+        <ul class="footer__socialIcons list-unstyled d-flex mb-0">
+          <li><img src="./assets/brands/Github.svg" alt="Github logo"></li>
+          <li class="mx-2"><img src="./assets/brands/Figma.svg" alt="Figma logo"></li>
+          <li><img src="./assets/brands/Discord.svg" alt="Discord logo"></li>
+        </ul>
+      </div>
+    </div>
+      <p class="
+      footer__copyRight text-center text-main-secondary mb-0
+      text-center
+      "
+      >
+        &copy; Copyright 2022. Made by Elias
+      </p>
+  </div>
+</footer>

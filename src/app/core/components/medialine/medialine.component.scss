@@ -1,5 +1,7 @@
 
 .medialina {
+    /* Layout */
+    left: 17px;
   /* 
   * Helper Media Screen to make media line disappear in the small screens
   */
@@ -19,9 +21,5 @@
       width: 32px;
       height: 32px;
     }
-  }
-  .media-line_container {
-    /* Layout */
-    left: 17px;
   }
 }
