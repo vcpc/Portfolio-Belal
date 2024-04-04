@@ -1,4 +1,10 @@
-<section class="qoute mx-auto position-relative">
+<section
+  [ngClass]="{
+    'small-media': mobileMedia,
+    'min-small-media': minSmallMedia
+  }"
+  class="qoute mx-auto position-relative"
+>
   <div class="inner">
     <div class="position-relative">
       <p class="text-white mb-0 qoute__qoutes border-secondary">
@@ -12,6 +18,10 @@
     </div>
     <div>
       <p
+        [ngClass]="{
+          'small-media': mobileMedia,
+          'min-small-media': minSmallMedia
+        }"
         class="qoute__author position-absolute mb-0 text-white border-secondary"
       >
         - Dr. Who
