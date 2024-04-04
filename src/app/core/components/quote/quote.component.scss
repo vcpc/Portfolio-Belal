@@ -1,0 +1,119 @@
+.qoute {
+  /* box Model */
+  max-width: 712px;
+  padding: {
+    top: 112px;
+  }
+  margin-left: 50px;
+  /* Layout */
+  text-align: center;
+
+  p {
+    /* Text */
+    font-size: 23px;
+  }
+
+  /*
+* Helper to change the qoute in small screens
+    * 1. Change Positions
+    * 2. Change Box Model
+    * 3. Change Text Size
+*/
+  @media screen and (max-width: 567px) {
+    /* Postion*/
+    right: 0px; /* 1 */
+
+    /* Box Model*/ /* 2 */
+    padding: {
+      left: 20px;
+      right: 20px;
+    }
+
+    p {
+      /* Text */
+      font-size: 12px; /* 3 */
+    }
+  }
+  /*
+* Helper to change the qoute in medium and large screen
+    * 1. Change Positions
+    * 2. Change Box Model
+    * 3. Change Text Size
+*/
+  @media screen and (min-width: 568px) and (max-width: 992px) {
+    & {
+      /* Postion*/ /* 1 */
+      right: 0px;
+
+      /* Box Model*/ /* 2 */
+      padding: {
+        left: 50px;
+        right: 50px;
+      }
+
+      p {
+        /* Text */
+        font-size: 15px; /* 3 */
+      }
+    }
+  }
+
+  &__qoutes {
+    /* box Model */
+    padding: 32px;
+  }
+
+  /* Positions */
+  right: 16px;
+
+  &__author {
+    /* Positioning */
+    bottom: 0px;
+    transform: translateY(100%);
+    right: 0px;
+
+    /* Box Model */
+    padding: 16px;
+    border-top: 0;
+
+    /*
+* Helper to change the qoute__author in small screen
+      * 1. Change Positions
+*/
+    @media screen and (max-width: 567px) {
+      & {
+        /* Postion*/
+        right: 20px; /* 1 */
+      }
+    }
+    /*
+* Helper to change the qoute__author in medium and large screen
+      * 1. Change Positions
+*/
+    @media screen and (min-width: 568px) and (max-width: 992px) {
+      & {
+        /* Postion*/
+        right: 50px; /* 1 */
+      }
+    }
+  }
+
+  &__img {
+    /* Box Model */
+    width: 41px;
+    height: 28px;
+    padding: 4px 8px;
+
+    transform: translateY(-50%);
+    top: 0;
+  }
+
+  &__img.author {
+    /* Positioning */
+    right: 16px;
+  }
+
+  &__img.quotes {
+    left: 19px;
+  }
+}
