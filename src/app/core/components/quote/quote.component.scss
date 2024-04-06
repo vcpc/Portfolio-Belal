@@ -1,4 +1,7 @@
 .qoute {
+  /* Layout */
+  text-align: center;
+
   /* box Model */
   max-width: 800px;
   padding: {
@@ -8,8 +11,6 @@
     left: 50px;
     bottom: 137px;
   }
-  /* Layout */
-  text-align: center;
 
   &__qoutes {
     /* Text */
@@ -19,7 +20,7 @@
 
   /**
     * Helper to change the qoute in small screens
-    * 1. Change Positions
+    * 1. Change Positioning
     * 2. Change Box Model
     * 3. Change Text Size
     */
@@ -40,7 +41,7 @@
   }
   /**
     * Helper to change the qoute in medium and large screen
-    * 1. Change Positions
+    * 1. Change Positioning
     * 2. Change Box Model
     * 3. Change Text Size
     */
@@ -61,12 +62,12 @@
   }
 
   &__qoutes {
+    /* Positioning */
+    right: 16px;
+
     /* box Model */
     padding: 32px;
   }
-
-  /* Positions */
-  right: 16px;
 
   &__author {
     /* Positioning */
@@ -84,7 +85,7 @@
 
     /**
       * Helper to change the qoute__author in small screen
-      * 1. Change Positions
+      * 1. Change Positioning
       */
     &.small-media {
       /* Postion*/
@@ -93,7 +94,7 @@
 
     /**
       * Helper to change the qoute__author in medium and large screen
-      * 1. Change Positions
+      * 1. Change Positioning
       */
     &.min-small-media {
       /* Postion*/
@@ -102,14 +103,14 @@
   }
 
   &__img {
+    /* Positioning */
+    transform: translateY(-50%);
+    top: 0;
+
     /* Box Model */
     width: 41px;
     height: 28px;
     padding: 4px 8px;
-
-    /* Positioning */
-    transform: translateY(-50%);
-    top: 0;
   }
 
   &__img.author {
