@@ -31,6 +31,17 @@
         top: 32px;
         bottom: 24px;
       }
+      /*
+   * Helper to change the home in small screens
+ * 1. change box model
+  */
+      &.small-media {
+        margin    /* box model */ /* 1 */
+         : {
+          top: 24px;
+          bottom: 25px;
+        }
+      }
     }
   }
 

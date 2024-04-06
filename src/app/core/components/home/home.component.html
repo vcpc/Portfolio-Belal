@@ -15,7 +15,12 @@
             and
             <span class="text-main-primary"> front-end developer </span>
           </h1>
-          <p class="mb-4 text-main-secondary">
+          <p
+            [ngClass]="{
+              'small-media': mobileMedia
+            }"
+            class="text-main-secondary"
+          >
             He crafts responsive websites where technologies meet creativity
           </p>
           <button
