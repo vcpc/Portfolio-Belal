@@ -1,10 +1,10 @@
 .home {
   $refer: &;
 
-  /*
-   * Helper to change the home in small screens
- * 1. change box model
-  */
+  /**
+    * Helper to change the home in small screens
+    * 1. change box model
+    */
   &.small-media {
     padding-top: 82px; /* Box Model */ /* 2 */
   }
@@ -31,10 +31,10 @@
         top: 32px;
         bottom: 24px;
       }
-      /*
-   * Helper to change the home in small screens
- * 1. change box model
-  */
+      /**
+        * Helper to change the home in small screens
+        * 1. change box model
+        */
       &.small-media {
         margin    /* box model */ /* 1 */
          : {
@@ -46,17 +46,17 @@
   }
 
   &__images {
-    /*
-   * Helper to change the home in small screens
- * 1. change box model
-  */
+    /**
+      * Helper to change the home in small screens
+      * 1. change box model
+      */
     &.small-media {
+      /* Position */
+      margin: auto;
+
       /* Box Model */ /* 1 */
       max-width: 313px;
       height: 260px;
-
-      /* Position */
-      margin: auto;
     }
 
     #{$refer}__main {
@@ -70,10 +70,10 @@
       /* Other */
       z-index: 1;
 
-      /*
- * Helper to change the home__images in small screens to be center
- * 1. change Positioning
-*/
+      /**
+      * Helper to change the home__images in small screens to be center
+      * 1. change Positioning
+      */
       &.small-media {
         /* Positioning */ /* 1 */
         left: 0;
@@ -81,46 +81,46 @@
     }
 
     #{$refer}__dots {
-      /*
- * Helper to change the home__images in small screens to be center
-  * 1. change box model
- * 2. change Positioning
-*/
+      /**
+        * Helper to change the home__images in small screens to be center
+        * 1. change box model
+        * 2. change Positioning
+        */
       &.small-media {
+        /* Positioning */
+        bottom: 38px; /* 2 */
+
         /* Box Model */ /* 1 */
         max-width: 56px;
         height: 56px;
-
-        /* Positioning */
-        bottom: 38px; /* 2 */
       }
-
-      /* Box Model */
-      max-width: 84px;
-      height: 84px;
 
       /* Positioning */
       bottom: 56px;
       right: 16px;
+
+      /* Box Model */
+      max-width: 84px;
+      height: 84px;
 
       /* Other */
       z-index: 1;
     }
 
     #{$refer}__outline {
-      /*
- * Helper to change the home__images in small screens to be center
-  * 1. change box model
- * 2. change Positioning
-*/
+      /**
+        * Helper to change the home__images in small screens to be center
+        * 1. change Positioning
+        * 2. change box model
+        */
       &.small-media {
-        /* Box Model */ /* 1 */
-        max-width: 104px;
-        height: 104px;
-
-        /* Positioning */ /* 2 */
+        /* Positioning */ /* 1 */
         bottom: 99px;
         left: 6px;
+
+        /* Box Model */ /* 2 */
+        max-width: 104px;
+        height: 104px;
       }
 
       /* Positioning */
@@ -137,11 +137,10 @@
   }
 
   &__frame {
-    /*
-   * Helper to change the home__images in small screens to be center
-    * 1. change box model
-
-  */
+    /**
+      * Helper to change the home__images in small screens to be center
+      * 1. change box model
+      */
     &.small-media {
       /* Box Model */ /* 1 */
       width: 100%;
@@ -154,10 +153,10 @@
     /* Text */
     font-weight: 500;
 
-    /*
-   * Helper to change the  home__frame in small screens
-    * 1. change Position
-  */
+    /**
+      * Helper to change the  home__frame in small screens
+      * 1. change Position
+      */
     @media (min-width: 600px) {
       /* Position */ /* 1*/
       margin: {

@@ -21,7 +21,7 @@ import { RouterLinkActive } from '@angular/router';
 export class NavbarComponent implements AfterViewInit {
   navbarShowFlag: boolean = true;
   showOpenBtn: boolean = true;
-  navBarOpen:boolean = true;
+  navBarOpen: boolean = true;
   siteLang: string = 'EN';
   constructor(
     private _BreakpointObserver: BreakpointObserver,
@@ -62,9 +62,9 @@ export class NavbarComponent implements AfterViewInit {
     });
     e.target.classList.add('active');
     if (this.navBarOpen) {
-    navbar.classList.remove('show');
-    navbarList.classList.add('d-none');
-    this.navbarShowFlag = true;
+      navbar.classList.remove('show');
+      navbarList.classList.add('d-none');
+      this.navbarShowFlag = true;
     }
   }
 

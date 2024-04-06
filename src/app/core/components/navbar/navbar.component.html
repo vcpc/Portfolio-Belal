@@ -1,93 +1,153 @@
 <div class="container fixed-top ps-3 pe-3">
   <nav #navbar class="navbar align-items-start flex-wrap bg-main">
-    <a [ngStyle]="{'padding-bottom': !navbarShowFlag ? '55px' :''}" class="fw-bold text-decoration-none text-white"
-      href="#">
-      <img class="navbar__logo" src="./assets/logo-solid.svg" alt="logo-solid">
+    `
+    <a
+      [ngStyle]="{ 'padding-bottom': !navbarShowFlag ? '55px' : '' }"
+      class="fw-bold text-decoration-none text-white"
+      href="#"
+    >
+      <img
+        class="navbar__logo"
+        src="./assets/logo-solid.svg"
+        alt="logo-solid"
+      />
       <span class="ps-2">Elias</span>
     </a>
     @if (navbarShowFlag) {
-    <button (click)="openNavBar(navbar,navbarList)" [ngClass]="{'d-none': showOpenBtn , 'd-block': !showOpenBtn}"
-      class="border-0 bg-transparent">
-      <img src="./assets/burger_btn.svg" alt="burger_btn">
+    <button
+      (click)="openNavBar(navbar, navbarList)"
+      [ngClass]="{ 'd-none': showOpenBtn, 'd-block': !showOpenBtn }"
+      class="border-0 bg-transparent"
+    >
+      <img src="./assets/burger_btn.svg" alt="burger_btn" />
+    </button>
+    } @if (!navbarShowFlag) {
+    <button
+      (click)="closeNavBar(navbar, navbarList)"
+      class="d-block p-0 nabbar-burgarBtn border-0 bg-transparent w-50 text-end"
+    >
+      <img src="./assets/close_btn.svg" alt="close_btn" />
     </button>
     }
-    @if (!navbarShowFlag) {
-    <button (click)="closeNavBar(navbar,navbarList)" class="d-block p-0 nabbar-burgarBtn border-0 
-      bg-transparent w-50 text-end">
-      <img src="./assets/close_btn.svg" alt="close_btn">
-    </button>
-    }
-    <ul #navbarList class="navbar__list list-unstyled mb-0
-      align-self-start h-100 position-relative">
-      <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
-        <a 
-        #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
-        [ngClass]="{'ps-32': navbarShowFlag}" 
-        class="navbar__link text-main-secondary text-decoration-none active" 
-        href="#home">
-        <span class="text-main">#</span>home
+    <ul
+      #navbarList
+      class="navbar__list list-unstyled mb-0 align-self-start h-100 position-relative"
+    >
+      <li [ngClass]="{ 'pb-4': !navbarShowFlag }" class="navbar__item">
+        <a
+          #navbar__link
+          (click)="activeBtn(navbar, navbarList, $event)"
+          [ngClass]="{ 'ps-32': navbarShowFlag }"
+          class="navbar__link text-main-secondary text-decoration-none active"
+          href="#home"
+        >
+          <span class="text-main-primary">#</span>home
         </a>
       </li>
-      <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
-        <a 
-          #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
-          [ngClass]="{'ps-32': navbarShowFlag}" 
-          class="navbar__link text-main-secondary text-decoration-none" 
-          href="#works">
-          <span class="text-main">#</span>works
+      <li [ngClass]="{ 'pb-4': !navbarShowFlag }" class="navbar__item">
+        <a
+          #navbar__link
+          (click)="activeBtn(navbar, navbarList, $event)"
+          [ngClass]="{ 'ps-32': navbarShowFlag }"
+          class="navbar__link text-main-secondary text-decoration-none"
+          href="#works"
+        >
+          <span class="text-main-primary">#</span>works
         </a>
       </li>
-      <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
-        <a 
-          #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
-          [ngClass]="{'ps-32': navbarShowFlag}" 
-          class="navbar__link text-main-secondary text-decoration-none" 
-          href="#about-me">
-          <span class="text-main">#</span>about-me
+      <li [ngClass]="{ 'pb-4': !navbarShowFlag }" class="navbar__item">
+        <a
+          #navbar__link
+          (click)="activeBtn(navbar, navbarList, $event)"
+          [ngClass]="{ 'ps-32': navbarShowFlag }"
+          class="navbar__link text-main-secondary text-decoration-none"
+          href="#about-me"
+        >
+          <span class="text-main-primary">#</span>about-me
         </a>
       </li>
-      <li [ngClass]="{'pb-4': !navbarShowFlag}" class="navbar__item">
-        <a 
-          #navbar__link (click)="activeBtn(navbar,navbarList,$event)"
-          [ngClass]="{'ps-32': navbarShowFlag}" 
-          class="navbar__link text-main-secondary text-decoration-none" 
-          href="#contacts">
-          <span class="text-main">#</span>contacts
+      <li [ngClass]="{ 'pb-4': !navbarShowFlag }" class="navbar__item">
+        <a
+          #navbar__link
+          (click)="activeBtn(navbar, navbarList, $event)"
+          [ngClass]="{ 'ps-32': navbarShowFlag }"
+          class="navbar__link text-main-secondary text-decoration-none"
+          href="#contacts"
+        >
+          <span class="text-main-primary">#</span>contacts
         </a>
       </li>
-      <li [ngClass]="{'pb-4': !navbarShowFlag}" class="align-self-end navbar__item">
-        <div class="navbar__lang navbar__link text-main-secondary" [ngClass]="{'ps-32': navbarShowFlag}">
+      <li
+        [ngClass]="{ 'pb-4': !navbarShowFlag }"
+        class="align-self-end navbar__item"
+      >
+        <div
+          class="navbar__lang navbar__link text-main-secondary"
+          [ngClass]="{ 'ps-32': navbarShowFlag }"
+        >
           <div class="position-relative">
-            <div (click)="openLangDropdown(lang__dropdown,langChevron)">
-              <span class="fw-semibold">{{siteLang}}</span>
-              <span class="ps-1"><img #langChevron class="chevron-down" src="./assets/lang-arrow.svg"
-                  alt="language-arrow"></span>
+            <div (click)="openLangDropdown(lang__dropdown, langChevron)">
+              <span class="fw-semibold">{{ siteLang }}</span>
+              <span class="ps-1"
+                ><img
+                  #langChevron
+                  class="chevron-down"
+                  src="./assets/lang-arrow.svg"
+                  alt="language-arrow"
+              /></span>
             </div>
-            <div #lang__dropdown class="lang__dropdown hide bg-main text-center d-none">
+            <div
+              #lang__dropdown
+              class="lang__dropdown hide bg-main text-center d-none"
+            >
               <div class="lang-dropdown_border">
-                <p (click)="closeLangDropdown(lang__dropdown,langChevron,$event)" class="m-0">RU</p>
-                <p (click)="closeLangDropdown(lang__dropdown,langChevron,$event)" class="m-0">UA</p>
+                <p
+                  (click)="
+                    closeLangDropdown(lang__dropdown, langChevron, $event)
+                  "
+                  class="m-0"
+                >
+                  RU
+                </p>
+                <p
+                  (click)="
+                    closeLangDropdown(lang__dropdown, langChevron, $event)
+                  "
+                  class="m-0"
+                >
+                  UA
+                </p>
               </div>
             </div>
           </div>
         </div>
       </li>
-      <li [ngClass]="{'d-flex': !navbarShowFlag , 'd-none': navbarShowFlag }"
-        class="position-absolute start-50 bottom-0 translate-middle">
+      <li
+        [ngClass]="{ 'd-flex': !navbarShowFlag, 'd-none': navbarShowFlag }"
+        class="position-absolute start-50 bottom-0 translate-middle"
+      >
         <ul class="navbar__socialIcons list-unstyled m-0">
           <li>
             <a class="text-main-secondary w-100" href="#">
-              <img class="w-100" src="./assets/brands/Github.svg" alt="Github">
+              <img
+                class="w-100"
+                src="./assets/brands/Github.svg"
+                alt="Github"
+              />
             </a>
           </li>
           <li class="mx-2">
             <a class="text-main-secondary w-100" href="#">
-              <img class="w-100" src="./assets/brands/Dribble.svg" alt="Github">
+              <img
+                class="w-100"
+                src="./assets/brands/Dribble.svg"
+                alt="Github"
+              />
             </a>
           </li>
           <li>
             <a class="text-main-secondary w-100" href="#">
-              <img class="w-100" src="./assets/brands/Figma.svg" alt="Github">
+              <img class="w-100" src="./assets/brands/Figma.svg" alt="Github" />
             </a>
           </li>
         </ul>

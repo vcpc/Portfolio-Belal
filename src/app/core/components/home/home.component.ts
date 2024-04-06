@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  mobileMedia: boolean = false;
+  handsetPortrait: boolean = false;
 
   constructor(private _breakpointObserver: BreakpointObserver) {}
 
@@ -23,9 +23,9 @@ export class HomeComponent {
       .observe(Breakpoints.HandsetPortrait)
       .subscribe((result) => {
         if (result.matches) {
-          this.mobileMedia = true;
+          this.handsetPortrait = true;
         } else {
-          this.mobileMedia = false;
+          this.handsetPortrait = false;
         }
       });
   }
