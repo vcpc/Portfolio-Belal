@@ -16,12 +16,12 @@
     font-size: 23px;
   }
 
-  /*
-* Helper to change the qoute in small screens
+  /**
+    * Helper to change the qoute in small screens
     * 1. Change Positions
     * 2. Change Box Model
     * 3. Change Text Size
-*/
+    */
   &.small-media {
     /* Postion*/
     right: 0px; /* 1 */
@@ -37,12 +37,12 @@
       font-size: 12px; /* 3 */
     }
   }
-  /*
-* Helper to change the qoute in medium and large screen
+  /**
+    * Helper to change the qoute in medium and large screen
     * 1. Change Positions
     * 2. Change Box Model
     * 3. Change Text Size
-*/
+    */
   &.min-small-media {
     /* Postion*/ /* 1 */
     right: 0px;
@@ -77,18 +77,18 @@
     padding: 16px;
     border-top: 0;
 
-    /*
-* Helper to change the qoute__author in small screen
+    /**
+      * Helper to change the qoute__author in small screen
       * 1. Change Positions
-*/
+      */
     &.small-media {
       right: 20px; /* 1 */
     }
 
-    /*
-* Helper to change the qoute__author in medium and large screen
+    /**
+      * Helper to change the qoute__author in medium and large screen
       * 1. Change Positions
-*/
+      */
     &.min-small-media {
       /* Postion*/
       right: 50px; /* 1 */
