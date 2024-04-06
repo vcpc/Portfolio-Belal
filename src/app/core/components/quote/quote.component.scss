@@ -1,6 +1,6 @@
 .qoute {
   /* box Model */
-  max-width: 712px;
+  max-width: 800px;
   padding: {
     top: 112px;
   }
@@ -11,9 +11,10 @@
   /* Layout */
   text-align: center;
 
-  p {
+  &__qoutes {
     /* Text */
-    font-size: 23px;
+    font-size: 24px;
+    font-weight: 500;
   }
 
   /**
@@ -76,6 +77,10 @@
     /* Box Model */
     padding: 16px;
     border-top: 0;
+
+    /* Text */
+    font-size: 24px;
+    font-weight: 400;
 
     /**
       * Helper to change the qoute__author in small screen
