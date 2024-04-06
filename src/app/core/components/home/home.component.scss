@@ -37,8 +37,8 @@
         * 1. change box model
         */
       &.small-media {
-        /* box model */
-        margin /* 1 */
+        /* box model */ /* 1 */
+        margin
          : {
           top: 24px;
           bottom: 25px;
@@ -159,10 +159,8 @@
       * 1. change Position
       */
     @media (min-width: 600px) {
-      /* Position */ /* 1*/
-      margin: {
-        left: 19px;
-      }
+      /* Position */
+      margin-left: 19px; /* 1*/
     }
 
     span {
