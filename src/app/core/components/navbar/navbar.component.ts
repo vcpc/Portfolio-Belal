@@ -9,12 +9,12 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
-import { RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterLinkActive],
+  imports: [CommonModule, RouterLinkActive, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -29,8 +29,6 @@ export class NavbarComponent implements AfterViewInit {
   ) {}
   @ViewChild('navbar') navbar!: ElementRef;
   @ViewChild('navbarList') navbarList!: ElementRef;
-  @ViewChildren('navbar__link')
-  navbar__link!: QueryList<ElementRef>;
 
   ngAfterViewInit(): void {
     this.closeNavBarBox();
@@ -56,11 +54,7 @@ export class NavbarComponent implements AfterViewInit {
       });
   }
 
-  activeBtn(navbar: HTMLElement, navbarList: HTMLUListElement, e: any): void {
-    this.navbar__link.toArray().forEach((el) => {
-      this._Renderer2.removeClass(el.nativeElement, 'active');
-    });
-    e.target.classList.add('active');
+  closeNavbar(navbar: HTMLElement, navbarList: HTMLUListElement): void {
     if (this.navBarOpen) {
       navbar.classList.remove('show');
       navbarList.classList.add('d-none');
