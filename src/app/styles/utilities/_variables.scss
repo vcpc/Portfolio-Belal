@@ -7,10 +7,6 @@ $primary: #c778dd;
 /* Main Font */
 $font: "Fira Code";
 
-.text-main {
-  /* Color */
-  color: $primary;
-}
 .bg-main {
   /* Color */
   background-color: $background;
@@ -19,7 +15,25 @@ $font: "Fira Code";
   /* Color */
   background-color: $gray;
 }
+.bg-main-primary {
+  /* Color */
+  background-color: $primary;
+}
+
+.text-main-primary {
+  /* Color */
+  color: $primary;
+}
+
 .text-main-secondary {
   /* Color */
   color: $gray;
+}
+
+.border-primary {
+  border: 1px solid $primary;
+}
+
+.border-secondary {
+  border: 1px solid $gray;
 }

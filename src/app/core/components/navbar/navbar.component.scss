@@ -1,9 +1,9 @@
 @import "mixins.scss";
 
 .navbar {
-  /** 
+  /**
 * Helper to increase navbar padding top from small screens
-* 1. change box model 
+* 1. change box model
 */
   @media screen and (min-width: 599px) {
     & {
@@ -11,9 +11,9 @@
       padding-top: 32px;
     }
   }
-  /** 
+  /**
 * Helper to decrease navbar padding top from small screens
-* 1. change box model 
+* 1. change box model
 */
   @media screen and (max-width: 599px) {
     & {
@@ -137,10 +137,10 @@
   }
 }
 
-/** 
+/**
 * Helper to change the the navbar in small screens
-* 1. change box model 
-* 2. change anchors text 
+* 1. change box model
+* 2. change anchors text
 */
 @media (max-width: 599px) {
   .navbar__list {
@@ -158,29 +158,30 @@
     width: 100%;
   }
 }
-/** 
+/**
 * Helper to change the the navbar links padding
 1. responsive from 768px screens and above
 2. responsive from 767px screens and smaller
 */
-@media (min-width: 768px) { /* 1 */
+@media (min-width: 768px) {
+  /* 1 */
   .navbar {
     li {
       .ps-32 {
         /* Box Model */
-      padding-left: 32px;
+        padding-left: 32px;
       }
     }
   }
 }
-@media (max-width: 767px) { /* 2 */
+@media (max-width: 767px) {
+  /* 2 */
   .navbar {
     li {
       .ps-32 {
         /* Box Model */
-      padding-left: 16px;
+        padding-left: 16px;
       }
     }
   }
 }
-
