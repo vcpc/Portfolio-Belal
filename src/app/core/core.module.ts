@@ -4,6 +4,7 @@ import { MedialineComponent } from './components/medialine/medialine.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { QuoteComponent } from './components/quote/quote.component';
 
 @NgModule({
   declarations: [],
@@ -13,12 +14,14 @@ import { HomeComponent } from './components/home/home.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
+    QuoteComponent,
   ],
   exports: [
     MedialineComponent,
     NavbarComponent,
     FooterComponent,
     HomeComponent,
+    QuoteComponent,
   ],
 })
 export class CoreModule {}
