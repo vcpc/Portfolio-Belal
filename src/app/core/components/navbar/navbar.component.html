@@ -1,5 +1,5 @@
-<div class="fixed-top bg-main">
-  <div class="container ps-3 pe-3">
+<div [ngClass]="{ 'bg-main': !navbarShowFlag }" class="fixed-top ">
+  <div [ngClass]="{ 'bg-main': navbarShowFlag }" class="container ps-3 pe-3 ">
     <nav #navbar class="navbar align-items-start flex-wrap">
       <a [ngStyle]="{ 'padding-bottom': !navbarShowFlag ? '55px' : '' }" class="fw-bold text-decoration-none text-white"
         routerLink="/home">

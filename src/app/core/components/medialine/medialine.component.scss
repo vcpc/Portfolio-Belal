@@ -1,7 +1,18 @@
-
 .medialina {
+  /* 
+  * Helper Media Screen to make media line away from content in large screens
+  */
+  @media screen and (min-width: 678px) {
     /* Layout */
     left: 17px;
+  }
+  /* 
+  * Helper Media Screen to make media line away from content in small screens
+  */
+  @media screen and (max-width: 677px) {
+    /* Layout */
+    left: 3px;
+  }
   /* 
   * Helper Media Screen to make media line disappear in the small screens
   */
