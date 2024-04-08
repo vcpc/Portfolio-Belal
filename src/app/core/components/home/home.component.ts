@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { HeroComponent } from './hero/hero.component';
 import { QuoteComponent } from './quote/quote.component';
-import { HeroComponent } from '../../../hero/hero.component';
 
 @Component({
   selector: 'app-home',
