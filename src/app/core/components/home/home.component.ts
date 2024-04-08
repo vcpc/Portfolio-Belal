@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { QuoteComponent } from '../quote/quote.component';
+import { QuoteComponent } from './quote/quote.component';
 import { HeroComponent } from '../../../hero/hero.component';
 
 @Component({
