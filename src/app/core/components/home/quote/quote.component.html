@@ -1,36 +1,36 @@
 <section
   [ngClass]="{
-    'small-media': mobileMedia,
-    'min-small-media': minSmallMedia
+    'small-media': isHandsetPortrait,
+    'min-small-media': isSmall
   }"
-  class="qoute mx-auto position-relative"
+  class="qoute mx-auto"
 >
-  <div class="inner">
-    <div class="position-relative">
-      <p class="text-white mb-0 qoute__qoutes border-secondary">
-        With great power comes great electricity bill
-      </p>
+  <!-- <div class="inner"> -->
+  <div class="position-relative">
+    <p class="text-white mb-0 qoute__qoutes border-secondary">
+      With great power comes great electricity bill
       <img
         class="position-absolute qoute__img bg-main quotes background"
         src="./assets/quote.svg"
         alt="quote"
       />
-    </div>
-    <div>
-      <p
-        [ngClass]="{
-          'small-media': mobileMedia,
-          'min-small-media': minSmallMedia
-        }"
-        class="qoute__author position-absolute mb-0 text-white border-secondary"
-      >
-        - Dr. Who
-        <img
-          class="position-absolute qoute__img bg-main author"
-          src="./assets/quote.svg"
-          alt="quote auther"
-        />
-      </p>
-    </div>
+    </p>
+    <p
+      [ngClass]="{
+        'small-media': isHandsetPortrait,
+        'min-small-media': isSmall
+      }"
+      class="qoute__author position-absolute mb-0 text-white border-secondary"
+    >
+      - Dr. Who
+      <img
+        class="position-absolute qoute__img bg-main author"
+        src="./assets/quote.svg"
+        alt="quote auther"
+      />
+    </p>
   </div>
+  <!-- <div> -->
+  <!-- </div> -->
+  <!-- </div> -->
 </section>

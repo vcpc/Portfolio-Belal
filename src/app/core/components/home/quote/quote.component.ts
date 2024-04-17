@@ -11,28 +11,30 @@ import { CommonModule } from '@angular/common';
 })
 export class QuoteComponent implements OnInit {
   constructor(private _breakpointObserver: BreakpointObserver) {}
-  mobileMedia: boolean = false;
-  minSmallMedia: boolean = false;
-  ngOnInit() {
+
+  isHandsetPortrait: boolean = false;
+  isSmall: boolean = false;
+
+  ngOnInit(): void {
     this.handleMobile();
   }
 
-  handleMobile() {
+  handleMobile(): void {
     this._breakpointObserver
       .observe([Breakpoints.HandsetPortrait, Breakpoints.Small])
       .subscribe((result) => {
         if (result.matches) {
           if (result.breakpoints[Breakpoints.HandsetPortrait]) {
-            this.mobileMedia = true;
-            this.minSmallMedia = false;
+            this.isHandsetPortrait = true;
+            this.isSmall = false;
           }
           if (result.breakpoints[Breakpoints.Small]) {
-            this.minSmallMedia = true;
-            this.mobileMedia = false;
+            this.isSmall = true;
+            this.isHandsetPortrait = false;
           }
         } else {
-          this.mobileMedia = false;
-          this.minSmallMedia = false;
+          this.isHandsetPortrait = false;
+          this.isSmall = false;
         }
       });
   }

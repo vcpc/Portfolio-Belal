@@ -8,7 +8,7 @@
     top: 112px;
   }
   margin: {
-    left: 50px;
+    // left: 50px;
     bottom: 137px;
   }
 
@@ -20,15 +20,18 @@
 
   /**
     * Helper to change the qoute in small screens
-    * 1. Change Positioning
-    * 2. Change Box Model
+    * 1. Change Layout
+    * 2. Change Positioning
     * 3. Change Text Size
     */
   &.small-media {
-    /* Postion*/
-    right: 0px; /* 1 */
+    /* Layout */
+    width: fit-content; /* 1 */
 
-    /* Box Model*/ /* 2 */
+    /* Postion*/
+    // right: 0px; /* 2 */
+
+    // /* Box Model*/ /* 3 */
     padding: {
       left: 20px;
       right: 20px;
@@ -41,19 +44,22 @@
   }
   /**
     * Helper to change the qoute in medium and large screen
-    * 1. Change Positioning
-    * 2. Change Box Model
+    * 1. Change Layout
+    * 2. Change Positioning
     * 3. Change Text Size
     */
   &.min-small-media {
-    /* Postion*/
-    right: 0px; /* 1 */
+    /* Layout */
+    width: fit-content; /* 1 */
 
-    /* Box Model*/ /* 2 */
-    padding: {
-      left: 50px;
-      right: 50px;
-    }
+    /* Postion*/
+    // right: 0px; /* 2 */
+
+    // /* Box Model*/ /* 2 */
+    // padding: {
+    //   left: 50px;
+    //   right: 50px;
+    // }
 
     p {
       /* Text */
@@ -62,8 +68,8 @@
   }
 
   &__qoutes {
-    /* Positioning */
-    right: 16px;
+    // /* Positioning */
+    // right: 16px;
 
     /* box Model */
     padding: 32px;
@@ -83,23 +89,23 @@
     font-size: 24px;
     font-weight: 400;
 
-    /**
-      * Helper to change the qoute__author in small screen
-      * 1. Change Positioning
-      */
-    &.small-media {
-      /* Postion*/
-      right: 20px; /* 1 */
-    }
+    // /**
+    //   * Helper to change the qoute__author in small screen
+    //   * 1. Change Positioning
+    //   */
+    // &.small-media {
+    //   /* Postion*/
+    //   right: 20px; /* 1 */
+    // }
 
-    /**
-      * Helper to change the qoute__author in medium and large screen
-      * 1. Change Positioning
-      */
-    &.min-small-media {
-      /* Postion*/
-      right: 50px; /* 1 */
-    }
+    // /**
+    //   * Helper to change the qoute__author in medium and large screen
+    //   * 1. Change Positioning
+    //   */
+    // &.min-small-media {
+    //   /* Postion*/
+    //   right: 50px; /* 1 */
+    // }
   }
 
   &__img {
