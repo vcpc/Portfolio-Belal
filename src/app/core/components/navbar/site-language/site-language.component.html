@@ -1,0 +1,26 @@
+<div class="navbar__lang navbar__link text-main-secondary" [ngClass]="{ 'ps-32':isHandsetPortrait }">
+  <div class="position-relative">
+    <div class="d-flex" (click)="onClickOpenLangDropdown()">
+      <span class="fw-semibold d-block">{{ siteLang }}</span>
+      <span class="ps-1">
+        <img class="chevron-down" src="./assets/lang-arrow.svg" alt="language-arrow"
+          [ngClass]="{'show': isLangDropDownOpen}" />
+      </span>
+    </div>
+    <div [ngClass]="{'show': isLangDropDownOpen, 'd-none': !isLangDropDownOpen}"
+      class="lang__dropdown hide bg-main text-center">
+      <div class="lang-dropdown_border">
+        <p (click)="
+          onClickChangeSiteLang($event)
+        " class="m-0">
+          RU
+        </p>
+        <p (click)="
+          onClickChangeSiteLang($event)
+        " class="m-0">
+          UA
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

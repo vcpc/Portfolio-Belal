@@ -1,0 +1,94 @@
+.navbar__lang {
+  /* Layout */
+  position: relative;
+  /* Other */
+  cursor: pointer;
+  p {
+    /* Color */
+    opacity: 0;
+    /* Other */
+    transition: 0.3s all;
+  }
+  .lang__dropdown {
+    /* Layout */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    /* Box Model */
+    width: fit-content;
+    padding: 8px;
+    /* Color */
+    opacity: 0;
+    /* Other */
+    overflow: hidden;
+  }
+  ::selection {
+    background-color: transparent;
+  }
+  .chevron-down.show {
+    /* Other */
+    transform: rotate(-180deg);
+  }
+  .lang__dropdown.show {
+    /* Color */
+    opacity: 1;
+    p {
+      /* Color */
+      opacity: 1;
+    }
+  }
+  .lang__dropdown.show::after {
+    /* Color */
+    opacity: 1;
+    /* Other */
+    transform: rotatex(0deg);
+    animation: borderLayer forwards 0s 0.3s;
+  }
+  @keyframes borderLayer {
+    from {
+      z-index: 1;
+    }
+    to {
+      z-index: -1;
+    }
+  }
+  .lang__dropdown::after {
+    /* Layout */
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Box Model */
+    border: 1px solid #abb2bf;
+    /* Color */
+    opacity: 0;
+    /* Other */
+    transform-origin: top;
+    transform: rotatex(70deg) translateY(-5px);
+    transition: 0.3s all;
+  }
+  .chevron-down {
+    /* Other */
+    transition: 0.3s all;
+  }
+}
+/**
+* Helper to change the the navbar links padding
+1. responsive from 768px screens and above
+2. responsive from 767px screens and smaller
+*/
+@media (min-width: 768px) {
+  /* 1 */
+  .ps-32 {
+    /* Box Model */
+    padding-left: 32px;
+  }
+}
+@media (max-width: 767px) {
+  /* 2 */
+  .ps-32 {
+    /* Box Model */
+    padding-left: 16px;
+  }
+}
