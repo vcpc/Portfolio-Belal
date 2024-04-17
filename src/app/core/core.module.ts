@@ -4,7 +4,7 @@ import { MedialineComponent } from './components/medialine/medialine.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-import { QuoteComponent } from './components/quote/quote.component';
+import { QuoteComponent } from './components/home/quote/quote.component';
 
 @NgModule({
   declarations: [],
