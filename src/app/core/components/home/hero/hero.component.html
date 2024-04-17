@@ -1,6 +1,6 @@
 <main
   [ngClass]="{
-    'small-media': handsetPortrait
+    'small-media': isHandsetPortrait
   }"
   class="home bg-main"
 >
@@ -17,7 +17,7 @@
           </h1>
           <p
             [ngClass]="{
-              'small-media': handsetPortrait
+              'small-media': isHandsetPortrait
             }"
             class="text-main-secondary"
           >
@@ -33,28 +33,28 @@
       </div>
 
       <div
-        [ngClass]="{ 'small-media': handsetPortrait }"
+        [ngClass]="{ 'small-media': isHandsetPortrait }"
         class="col-lg-6 home__images px-0"
       >
         <div
-          [ngClass]="{ 'small-media': handsetPortrait }"
+          [ngClass]="{ 'small-media': isHandsetPortrait }"
           class="home__main mb-0 ms-lg-auto"
         >
           <figure class="mb-0 position-relative">
             <img class="w-100" src="./assets/Image-1.png" alt="logo" />
             <img
-              [ngClass]="{ 'small-media': handsetPortrait }"
+              [ngClass]="{ 'small-media': isHandsetPortrait }"
               class="home__dots position-absolute"
               src="./assets/Dots.svg"
             />
             <img
-              [ngClass]="{ 'small-media': handsetPortrait }"
+              [ngClass]="{ 'small-media': isHandsetPortrait }"
               class="home__outline position-absolute"
               src="./assets/logo-outline.svg"
             />
           </figure>
           <div
-            [ngClass]="{ 'small-media': handsetPortrait }"
+            [ngClass]="{ 'small-media': isHandsetPortrait }"
             class="home__frame p-2 d-flex align-items-center text-main-primary gap-2 color-main border-secondary"
           >
             <div class="home__box primaryBorder bg-main-primary"></div>
