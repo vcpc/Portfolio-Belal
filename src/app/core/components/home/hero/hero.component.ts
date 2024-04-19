@@ -11,22 +11,22 @@ import { RouterLink } from '@angular/router';
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
-  handsetPortrait: boolean = false;
+  isHandsetPortrait: boolean = false;
 
   constructor(private _breakpointObserver: BreakpointObserver) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.handleMobile();
   }
 
-  handleMobile() {
+  handleMobile(): void {
     this._breakpointObserver
       .observe(Breakpoints.HandsetPortrait)
       .subscribe((result) => {
         if (result.matches) {
-          this.handsetPortrait = true;
+          this.isHandsetPortrait = true;
         } else {
-          this.handsetPortrait = false;
+          this.isHandsetPortrait = false;
         }
       });
   }
