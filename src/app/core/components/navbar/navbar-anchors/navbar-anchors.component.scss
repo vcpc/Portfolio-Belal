@@ -1,0 +1,45 @@
+@import "mixins.scss";
+@media (max-width: 599px) {
+  .navbar__list {
+    width: 100%;
+    height: 100%;
+  }
+  .navbar__item {
+    font-size: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .ps-32 {
+    padding-left: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .ps-32 {
+    padding-left: 16px;
+  }
+}
+.navbar__link {
+  @include transition(0.3s, All);
+}
+a.navbar__link:hover {
+  color: white;
+}
+.navbar__link.active {
+  color: white;
+  font-weight: 500;
+}
+
+.navbar__socialIcons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 36px;
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    font-size: 32px;
+  }
+}

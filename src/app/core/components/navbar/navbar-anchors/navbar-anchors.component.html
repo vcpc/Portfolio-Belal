@@ -1,0 +1,50 @@
+<ul [ngClass]="{'d-none': isHandsetPortrait && !isNavbarOpen,'d-flex': !isHandsetPortrait, 'd-block': isNavbarOpen}"
+  class="navbar__list list-unstyled mb-0 align-self-start h-100 position-relative">
+  <li [ngClass]="{ 'pb-4': !isNavbarOpen }" class="navbar__item">
+    <a (click)="onCloseNavbarClick()" [ngClass]="{ 'ps-32': !isNavbarOpen }"
+      class="navbar__link text-main-secondary text-decoration-none active" routerLink="/home" routerLinkActive="active">
+      <span class="text-main-primary">#</span>home
+    </a>
+  </li>
+  <li [ngClass]="{ 'pb-4': !isNavbarOpen }" class="navbar__item">
+    <a (click)="onCloseNavbarClick()" [ngClass]="{ 'ps-32': !isNavbarOpen }"
+      class="navbar__link text-main-secondary text-decoration-none" routerLink="/works" routerLinkActive="active">
+      <span class="text-main-primary">#</span>works
+    </a>
+  </li>
+  <li [ngClass]="{ 'pb-4': !isNavbarOpen }" class="navbar__item">
+    <a (click)="onCloseNavbarClick()" [ngClass]="{ 'ps-32': !isNavbarOpen }"
+      class="navbar__link text-main-secondary text-decoration-none" routerLink="/about" routerLinkActive="active">
+      <span class="text-main-primary">#</span>about-me
+    </a>
+  </li>
+  <li [ngClass]="{ 'pb-4': !isNavbarOpen }" class="navbar__item">
+    <a (click)="onCloseNavbarClick()" [ngClass]="{ 'ps-32': !isNavbarOpen }"
+      class="navbar__link text-main-secondary text-decoration-none" routerLink="/contacts" routerLinkActive="active">
+      <span class="text-main-primary">#</span>contacts
+    </a>
+  </li>
+  <li [ngClass]="{ 'pb-4': !isNavbarOpen }" class="align-self-end navbar__item">
+    <app-dropdown-sitelanguages [isNavbarOpen]="isNavbarOpen"></app-dropdown-sitelanguages>
+  </li>
+  <li [ngClass]="{ 'd-flex': isNavbarOpen, 'd-none': !isNavbarOpen }"
+    class="position-absolute start-50 bottom-0 translate-middle">
+    <ul class="navbar__socialIcons list-unstyled m-0">
+      <li>
+        <a class="text-main-secondary w-100" href="#">
+          <img class="w-100" src="./assets/brands/Github.svg" alt="Github" />
+        </a>
+      </li>
+      <li class="mx-2">
+        <a class="text-main-secondary w-100" href="#">
+          <img class="w-100" src="./assets/brands/Dribble.svg" alt="Github" />
+        </a>
+      </li>
+      <li>
+        <a class="text-main-secondary w-100" href="#">
+          <img class="w-100" src="./assets/brands/Figma.svg" alt="Github" />
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
