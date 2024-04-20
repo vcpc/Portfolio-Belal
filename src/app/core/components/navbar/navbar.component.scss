@@ -1,8 +1,12 @@
 .navbar {
+  /* Handle NavBar Logo */
   &__logo {
     width: 16px;
     height: 16px;
   }
+  /**
+  * change padding between navbar and top of page depend on screen width
+  */
   @media screen and (min-width: 599px) {
     & {
       padding-top: 32px;
@@ -14,7 +18,9 @@
     }
   }
 }
-
+/**
+* make navbar take full width and height while open in small screens
+*/
 @media (max-width: 599px) {
   .navbar.show {
     height: 100vh;

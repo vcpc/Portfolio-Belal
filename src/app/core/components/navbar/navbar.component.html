@@ -1,11 +1,27 @@
+<!-- isNavbarOpen Boolean Flag
+    * if true make the navebar take full backgroung for the site 
+    * if false return backgroung for init 
+    * depent on the navbar open or closed
+-->
 <div [ngClass]="{ 'bg-main': isNavbarOpen }" class="fixed-top ">
   <div [ngClass]="{ 'bg-main': !isNavbarOpen }" class="container ps-3 pe-3 ">
-    <nav #navbar [ngClass]="isNavbarOpen?'show':''" class="navbar align-items-start flex-wrap">
+    <!-- Start NavBar
+        * navbar using Flag isNavbarOpen to take width&height 100% while open in small screens
+    -->
+
+    <nav [ngClass]="isNavbarOpen?'show':''" class="navbar align-items-start flex-wrap">
+
+      <!-- anchor using Boolean Flag isNavbarOpen to take padding bottom while open in small screens -->
       <a [ngStyle]="{ 'padding-bottom': isNavbarOpen ? '55px' : '' }" class="fw-bold text-decoration-none text-white"
         routerLink="/home">
         <img class="navbar__logo" src="./assets/logo-solid.svg" alt="logo-solid" />
         <span class="ps-2">Elias</span>
       </a>
+
+      <!-- Start NavBar Burger&Close Buttons 
+      * navbar expend on 599px sm screens depend on boolean flag isHandsetPortrait
+      * toggle between burger and close buttons depend on boolean flag isNavbarOpen
+      -->
       @if (isHandsetPortrait) {
       <button (click)="onOpenNavBarClick()" [ngClass]="{ 'd-block': !isNavbarOpen, 'd-none': isNavbarOpen }"
         class="border-0 bg-transparent w-50 text-end">
@@ -16,6 +32,13 @@
         <img src="./assets/close_btn.svg" alt="close_btn" />
       </button>
       }
+      <!-- End NavBar Burger&Close Buttons -->
+
+      <!-- navbar anchors
+      * passing isNavBarOpen for child component help handle ui in different screens while open or close navbar
+      * passing isHandsetPortrait for child component help expend navbar in small screens
+      * receive isNavbarLinksClicked Boolean flag help close navbar after select any anchor
+      -->
       <div [ngClass]="{'w-100 h-100': isHandsetPortrait}">
         <app-navbar-anchors (isNavbarLinksClicked)="onLinksExpendedNavbarClick($event)" [isNavbarOpen]="isNavbarOpen"
           [isHandsetPortrait]="isHandsetPortrait"></app-navbar-anchors>
