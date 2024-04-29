@@ -3,7 +3,7 @@
 
   /**
     * Helper to change the home in small screens
-    * 1. change box model
+    * 1. decrease padding-top in a small screen  to be The distance is not great between the nav and the home
     */
   &.small-media {
     /* Box Model */
@@ -33,14 +33,15 @@
       }
       /**
         * Helper to change the home in small screens
-        * 1. change box model
+        * 1. decrease margin-top in a small screen
+        * 2. increase margin-bottom in a small screen
         */
       &.small-media {
-        /* box model */ /* 1 */
+        /* box model */
         margin
          : {
-          top: 24px;
-          bottom: 25px;
+          top: 24px; /* 1 */
+          bottom: 25px; /* 2 */
         }
       }
     }
@@ -49,13 +50,13 @@
   &__images {
     /**
       * Helper to change the home in small screens
-      * 1. change box model
+      * 1. to be the image middle  on small screens
+      * 2. decrease the width of the image
       */
     &.small-media {
-      /* Box Model */ /* 1 */
-      margin: auto;
-      max-width: 313px;
-      height: 260px;
+      /* Box Model */
+      margin: auto; /* 1 */
+      max-width: 313px; /* 2 */
     }
 
     #{$refer}__main {
@@ -65,14 +66,13 @@
 
       /* Box Model */
       max-width: 469px;
-      height: 386px;
 
       /* Other */
       z-index: 1;
 
       /**
-      * Helper to change the home__images in small screens to be center
-      * 1. change Positioning
+      * Helper to change the home__images in small screens
+      * 1. reset left direction to be 0 in small screens instead of 18
       */
       &.small-media {
         /* Positioning */
@@ -83,8 +83,8 @@
     #{$refer}__dots {
       /**
         * Helper to change the home__images in small screens to be center
-        * 1. change Positioning
-        * 2. change box model
+        * 1. decrease margin-bottom in a small screen
+        * 2. decrease the width of the image
         */
       &.small-media {
         /* Positioning */
@@ -92,16 +92,11 @@
 
         /* Box Model */ /* 2 */
         max-width: 56px;
-        height: 56px;
       }
 
       /* Positioning */
       bottom: 56px;
       right: 16px;
-
-      /* Box Model */
-      max-width: 84px;
-      height: 84px;
 
       /* Other */
       z-index: 1;
@@ -110,17 +105,19 @@
     #{$refer}__outline {
       /**
         * Helper to change the home__images in small screens to be center
-        * 1. change Positioning
-        * 2. change box model
+        * 1. reset bottom direction in small screens
+        * 2. reset bottom direction in small screens
+        * 3. decrease the width of the image
+        * 4. decrease the height of the image
         */
       &.small-media {
-        /* Positioning */ /* 1 */
-        bottom: 99px;
-        left: 6px;
+        /* Positioning */
+        bottom: 99px; /* 1 */
+        left: 6px; /* 2 */
 
-        /* Box Model */ /* 2 */
-        max-width: 104px;
-        height: 104px;
+        /* Box Model */
+        max-width: 104px; /* 3 */
+        height: 104px; /* 4 */
       }
 
       /* Positioning */
@@ -139,23 +136,23 @@
   &__frame {
     /**
       * Helper to change the home__images in small screens to be center
-      * 1. change box model
+      * 1. to be the box under image fit for the parent
       */
     &.small-media {
       /* Box Model */ /* 1 */
       width: 100%;
-      left: 0;
     }
 
     /* Box Model */
     width: 415px;
+    column-gap: 10px;
 
     /* Text */
     font-weight: 500;
 
     /**
       * Helper to change the  home__frame in small screens
-      * 1. change Position
+      * 1. to be the box start and end of image fit for the parent
       */
     @media (min-width: 600px) {
       /* Position */
