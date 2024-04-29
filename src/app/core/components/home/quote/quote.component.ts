@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import {
+  BreakpointObserver,
+  BreakpointState,
+  Breakpoints,
+} from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,26 +20,31 @@ export class QuoteComponent implements OnInit {
   isSmall: boolean = false;
 
   ngOnInit(): void {
-    this.handleMobile();
+    this.handleBreakpoints();
   }
-
-  handleMobile(): void {
+  handleBreakpoints(): void {
     this._breakpointObserver
       .observe([Breakpoints.HandsetPortrait, Breakpoints.Small])
       .subscribe((result) => {
-        if (result.matches) {
-          if (result.breakpoints[Breakpoints.HandsetPortrait]) {
-            this.isHandsetPortrait = true;
-            this.isSmall = false;
-          }
-          if (result.breakpoints[Breakpoints.Small]) {
-            this.isSmall = true;
-            this.isHandsetPortrait = false;
-          }
-        } else {
-          this.isHandsetPortrait = false;
-          this.isSmall = false;
-        }
+        this.updateViewportFlags(result);
       });
+  }
+
+  updateViewportFlags(result: BreakpointState): void {
+    if (result.matches) {
+      this.updateFlagsForMatches(result.breakpoints);
+    } else {
+      this.resetFlags();
+    }
+  }
+
+  updateFlagsForMatches(breakpoints: { [key: string]: boolean }): void {
+    this.isHandsetPortrait = breakpoints[Breakpoints.HandsetPortrait];
+    this.isSmall = breakpoints[Breakpoints.Small];
+  }
+
+  resetFlags(): void {
+    this.isHandsetPortrait = false;
+    this.isSmall = false;
   }
 }
