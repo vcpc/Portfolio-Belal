@@ -25,16 +25,15 @@ export class HeroComponent {
   constructor(private _breakpointObserver: BreakpointObserver) {}
 
   /**
-   * Initialize the component and start observing the handset portrait breakpoint.
-   * @returns {void}
+   * Initialize the component and start observing the `HandsetPortraitBreakpoint`.
+
    */
   ngOnInit(): void {
     this.HandsetPortraitBreakpoint();
   }
 
   /**
-   * Observe the handset portrait breakpoint and update the ,"isHandsetPortrait" flag accordingly when the user change display at screen.
-   * @returns {void}
+   * Observe the `HandsetPortraitBreakpoint` and update the ,`isHandsetPortrait` flag accordingly when the user change display at screen.
    */
   HandsetPortraitBreakpoint(): void {
     this._breakpointObserver
@@ -45,9 +44,8 @@ export class HeroComponent {
   }
 
   /**
-   * Update the "isHandsetPortrait" flag based on the given matches value.
-   * @param matches A boolean value indicating whether the viewport is in handset portrait mode.
-   * @returns {void}
+   * Update the `isHandsetPortrait` flag based on the given matches value.
+   * @param matches indicating whether the viewport is in handset portrait mode.
    */
   updateHandsetPortrait(matches: boolean): void {
     this.isHandsetPortrait = matches;
