@@ -16,10 +16,12 @@ import { RouterLink } from '@angular/router';
 export class HeroComponent {
   /**
    * Flag indicating whether the viewport is in handset portrait mode.
-   * @type {boolean}
    */
   isHandsetPortrait: boolean = false;
 
+  /**
+   * @param _breakpointObserver BreakpointObserver service for detecting viewport changes.
+   */
   constructor(private _breakpointObserver: BreakpointObserver) {}
 
   /**
@@ -31,7 +33,7 @@ export class HeroComponent {
   }
 
   /**
-   * Observe the handset portrait breakpoint and update the `isHandsetPortrait` flag accordingly when the user change display at screen.
+   * Observe the handset portrait breakpoint and update the ,"isHandsetPortrait" flag accordingly when the user change display at screen.
    * @returns {void}
    */
   HandsetPortraitBreakpoint(): void {
@@ -43,7 +45,7 @@ export class HeroComponent {
   }
 
   /**
-   * Update the `isHandsetPortrait` flag based on the given matches value.
+   * Update the "isHandsetPortrait" flag based on the given matches value.
    * @param matches A boolean value indicating whether the viewport is in handset portrait mode.
    * @returns {void}
    */
