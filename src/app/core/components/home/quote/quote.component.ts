@@ -5,6 +5,7 @@ import {
   Breakpoints,
 } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-quote',
@@ -20,23 +21,24 @@ export class QuoteComponent implements OnInit {
   isSmall: boolean = false;
 
   ngOnInit(): void {
-    this.handleBreakpoints();
+    this.updateViewportFlags(this.handleBreakpoints());
   }
-  handleBreakpoints(): void {
-    this._breakpointObserver
-      .observe([Breakpoints.HandsetPortrait, Breakpoints.Small])
-      .subscribe((result) => {
-        this.updateViewportFlags(result);
-      });
+  handleBreakpoints(): Observable<BreakpointState> {
+    return this._breakpointObserver.observe([
+      Breakpoints.HandsetPortrait,
+      Breakpoints.Small,
+    ]);
   }
 
-  updateViewportFlags(result: BreakpointState): void {
-    console.log(result);
-    if (result.matches) {
-      this.updateFlagsForMatches(result.breakpoints);
-    } else {
-      this.resetFlags();
-    }
+  updateViewportFlags(Observable: Observable<BreakpointState>): void {
+    Observable.subscribe((result) => {
+      console.log(result);
+      if (result.matches) {
+        this.updateFlagsForMatches(result.breakpoints);
+      } else {
+        this.resetFlags();
+      }
+    });
   }
 
   updateFlagsForMatches(breakpoints: { [key: string]: boolean }): void {
