@@ -31,6 +31,7 @@ export class QuoteComponent implements OnInit {
   }
 
   updateViewportFlags(result: BreakpointState): void {
+    console.log(result);
     if (result.matches) {
       this.updateFlagsForMatches(result.breakpoints);
     } else {

@@ -1,4 +1,4 @@
-.qoute {
+.quote {
   /* Layout */
   text-align: center;
 
@@ -13,16 +13,16 @@
     bottom: 137px;
   }
 
-  &__qoutes {
+  &__quotes {
     /* Text */
     font-size: 24px;
     font-weight: 500;
   }
 
   /**
-    * Helper to change the qoute in small screens
-    * 1. reset the width to be fit content in small media
-    * 2. adding padding by X axis to prevent the quote aligned the viewport
+    * Helper to change the quote in small screens
+    * 1. the default width is `800px` and in `small-media` the width will be fit the content
+    * 2. adding padding on the left and right sides to prevent the content aligned the viewport
     * 3. decrease the font size to smaller in small media
     */
   &.small-media {
@@ -41,7 +41,7 @@
     }
   }
   /**
-    * Helper to change the qoute in medium and small screen
+    * Helper to change the quote in medium and small screen
     * 1. reset the width to be fit content in medium-media
     * 2. increase the font size to smaller in medium media
     */
@@ -52,11 +52,11 @@
 
     p {
       /* Text */
-      font-size: 15px; /* 3 */
+      font-size: 15px; /* 2 */
     }
   }
 
-  &__qoutes {
+  &__quotes {
     /* box Model */
     padding: 32px;
   }
