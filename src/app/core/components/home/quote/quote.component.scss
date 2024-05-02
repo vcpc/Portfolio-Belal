@@ -1,4 +1,4 @@
-.qoute {
+.quote {
   /* Layout */
   text-align: center;
 
@@ -7,26 +7,27 @@
   padding: {
     top: 112px;
   }
+
+  /* Positioning */
   margin: {
-    left: 50px;
     bottom: 137px;
   }
 
-  &__qoutes {
+  &__quotes {
     /* Text */
     font-size: 24px;
     font-weight: 500;
   }
 
   /**
-    * Helper to change the qoute in small screens
-    * 1. Change Positioning
-    * 2. Change Box Model
-    * 3. Change Text Size
+    * Helper to change the quote in small screens
+    * 1. the default width is `800px` and in `small-media` the width will be fit the content
+    * 2. adding padding on the left and right sides to prevent the content aligned the viewport
+    * 3. decrease the font size to smaller in small media
     */
   &.small-media {
-    /* Postion*/
-    right: 0px; /* 1 */
+    /* Layout */
+    width: fit-content; /* 1 */
 
     /* Box Model*/ /* 2 */
     padding: {
@@ -40,31 +41,22 @@
     }
   }
   /**
-    * Helper to change the qoute in medium and large screen
-    * 1. Change Positioning
-    * 2. Change Box Model
-    * 3. Change Text Size
+    * Helper to change the quote in medium and small screen
+    * 1. reset the width to be fit content in medium-media
+    * 2. increase the font size to smaller in medium media
     */
-  &.min-small-media {
-    /* Postion*/
-    right: 0px; /* 1 */
 
-    /* Box Model*/ /* 2 */
-    padding: {
-      left: 50px;
-      right: 50px;
-    }
+  &.medium-media {
+    /* Layout */
+    width: fit-content; /* 1 */
 
     p {
       /* Text */
-      font-size: 15px; /* 3 */
+      font-size: 15px; /* 2 */
     }
   }
 
-  &__qoutes {
-    /* Positioning */
-    right: 16px;
-
+  &__quotes {
     /* box Model */
     padding: 32px;
   }
@@ -82,24 +74,6 @@
     /* Text */
     font-size: 24px;
     font-weight: 400;
-
-    /**
-      * Helper to change the qoute__author in small screen
-      * 1. Change Positioning
-      */
-    &.small-media {
-      /* Postion*/
-      right: 20px; /* 1 */
-    }
-
-    /**
-      * Helper to change the qoute__author in medium and large screen
-      * 1. Change Positioning
-      */
-    &.min-small-media {
-      /* Postion*/
-      right: 50px; /* 1 */
-    }
   }
 
   &__img {

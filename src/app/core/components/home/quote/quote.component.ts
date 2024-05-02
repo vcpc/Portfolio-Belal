@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import {
+  BreakpointObserver,
+  BreakpointState,
+  Breakpoints,
+} from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-quote',
@@ -11,29 +16,38 @@ import { CommonModule } from '@angular/common';
 })
 export class QuoteComponent implements OnInit {
   constructor(private _breakpointObserver: BreakpointObserver) {}
-  mobileMedia: boolean = false;
-  minSmallMedia: boolean = false;
-  ngOnInit() {
-    this.handleMobile();
+
+  isHandsetPortrait: boolean = false;
+  isSmall: boolean = false;
+
+  ngOnInit(): void {
+    this.updateViewportFlags(this.handleBreakpoints());
+  }
+  handleBreakpoints(): Observable<BreakpointState> {
+    return this._breakpointObserver.observe([
+      Breakpoints.HandsetPortrait,
+      Breakpoints.Small,
+    ]);
   }
 
-  handleMobile() {
-    this._breakpointObserver
-      .observe([Breakpoints.HandsetPortrait, Breakpoints.Small])
-      .subscribe((result) => {
-        if (result.matches) {
-          if (result.breakpoints[Breakpoints.HandsetPortrait]) {
-            this.mobileMedia = true;
-            this.minSmallMedia = false;
-          }
-          if (result.breakpoints[Breakpoints.Small]) {
-            this.minSmallMedia = true;
-            this.mobileMedia = false;
-          }
-        } else {
-          this.mobileMedia = false;
-          this.minSmallMedia = false;
-        }
-      });
+  updateViewportFlags(Observable: Observable<BreakpointState>): void {
+    Observable.subscribe((result) => {
+      console.log(result);
+      if (result.matches) {
+        this.updateFlagsForMatches(result.breakpoints);
+      } else {
+        this.resetFlags();
+      }
+    });
+  }
+
+  updateFlagsForMatches(breakpoints: { [key: string]: boolean }): void {
+    this.isHandsetPortrait = breakpoints[Breakpoints.HandsetPortrait];
+    this.isSmall = breakpoints[Breakpoints.Small];
+  }
+
+  resetFlags(): void {
+    this.isHandsetPortrait = false;
+    this.isSmall = false;
   }
 }
