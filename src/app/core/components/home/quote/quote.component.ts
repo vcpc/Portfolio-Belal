@@ -20,7 +20,7 @@ import { Observable } from 'rxjs';
 })
 export class QuoteComponent implements OnInit {
   /**
-   * Flag indicating whether the viewport is in handset portrait mode.
+   * Flag indicating whether the viewport in`isHandsetPortrait` mode.
    */
   isHandsetPortrait: boolean = false;
 
@@ -35,14 +35,14 @@ export class QuoteComponent implements OnInit {
   constructor(private _breakpointObserver: BreakpointObserver) {}
 
   /**
-   * Initialize the component and start call `handleBreakpoints` to return Observable of BreakpointState to Observe at `updateViewportFlags`.
+   * Initialize the component and start observing the `HandsetPortrait` and `Small` breakpoints.
    */
   ngOnInit(): void {
     this.updateViewportFlags(this.handleBreakpoints());
   }
 
   /**
-   * return an Observable of BreakpointState to Observe and subscribe on `updateViewportFlags` .
+   * Observe the `HandsetPortrait` and `Small` breakpoints and return an Observable of BreakpointState.
    */
   handleBreakpoints(): Observable<BreakpointState> {
     return this._breakpointObserver.observe([
@@ -52,7 +52,7 @@ export class QuoteComponent implements OnInit {
   }
 
   /**
-   *  Subscribe at `BreakpointState` and Update the `isHandsetPortrait` and `isSmall` flags based on the given Observable of BreakpointState.
+   * Update the `isHandsetPortrait` and `isSmall` flags based on the given Observable of BreakpointState.
    */
   updateViewportFlags(Observable: Observable<BreakpointState>): void {
     Observable.subscribe((result) => {
@@ -73,7 +73,7 @@ export class QuoteComponent implements OnInit {
   }
 
   /**
-   * Reset the `isHandsetPortrait` and `isSmall` flags to `false` if both not matches.
+   * Reset the `isHandsetPortrait` and `isSmall` flags to false in another media.
    */
   resetFlags(): void {
     this.isHandsetPortrait = false;
