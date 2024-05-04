@@ -20,12 +20,12 @@ import { Observable } from 'rxjs';
 })
 export class QuoteComponent implements OnInit {
   /**
-   * Flag indicating whether the viewport in`isHandsetPortrait` mode.
+   * Flag indicating whether the viewport is in `handsetPortrait` mode.
    */
   isHandsetPortrait: boolean = false;
 
   /**
-   * Flag indicating whether the viewport is in small mode.
+   * Flag indicating whether the viewport is in `small` mode.
    */
   isSmall: boolean = false;
 
