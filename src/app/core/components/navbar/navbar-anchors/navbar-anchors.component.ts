@@ -27,7 +27,8 @@ export class NavbarAnchorsComponent {
    *@see {@link NavbarComponent}
    */
   @Output() isNavbarLinksClicked = new EventEmitter<Boolean>();
-  onCloseNavbarClick() {
+
+  onNavbarClick() {
     this.isNavbarLinksClicked.emit(false);
   }
 }

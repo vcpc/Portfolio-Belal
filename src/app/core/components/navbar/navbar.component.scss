@@ -1,6 +1,7 @@
 .navbar {
   /* Handle NavBar Logo */
   &__logo {
+    /* Box Model */
     width: 16px;
     height: 16px;
   }
@@ -9,11 +10,13 @@
   */
   @media screen and (min-width: 599px) {
     & {
+      /* Box Model */
       padding-top: 32px;
     }
   }
   @media screen and (max-width: 599px) {
     & {
+      /* Box Model */
       padding-top: 19px;
     }
   }
@@ -23,6 +26,7 @@
 */
 @media (max-width: 599px) {
   .navbar.show {
+    /* Box Model */
     height: 100vh;
     width: 100%;
   }

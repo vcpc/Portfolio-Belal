@@ -33,26 +33,33 @@
   @include transition(0.3s, All); /* 1 */
 }
 a.navbar__link:hover {
+  /* Color */
   color: white; /* 2 */
 }
 .navbar__link.active {
-  /* 3 */
-  color: white;
+  /* Color */
+  color: white; /* 3 */
+  /* Text */
   font-weight: 500;
 }
 
 /* handle navbar social icons when appear in small screens while navbar open */
 .navbar__socialIcons {
+  /* Layout */
   display: flex;
   justify-content: center;
+  /* Box Model */
   width: 100%;
   padding-bottom: 36px;
   li {
+    /* Layout */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Box Model */
     width: 64px;
     height: 64px;
+    /* Text */
     font-size: 32px;
   }
 }
