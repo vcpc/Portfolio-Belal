@@ -1,0 +1,106 @@
+<!-- NavBar anchors ul
+  * ul expend on sm screens depend on two Boolean Flags (isHandsetPortrait if screen width smaller than 599px ) and (isNavbarOpen if user select any anchor close navbar)
+  * ul back appear from min-width 599px with Boolean Flag isHandsetPortrait == false
+  * ul back appear with full width and height of parent component if user open it with burger button (isNavbarOpen)
+-->
+<ul
+  [ngClass]="{
+    'd-none': isHandsetPortrait && !isNavbarOpen,
+    'd-flex': !isHandsetPortrait,
+    'd-block': isNavbarOpen
+  }"
+  class="navbar__list list-unstyled mb-0 align-self-start h-100 position-relative"
+>
+  <!-- ul li use boolean (isNavbarOpen) to change padding if it open in small screens -->
+  <li [ngClass]="{ 'pb-4': isNavbarOpen }" class="navbar__item">
+    <!-- anchor use function [onNavbarClick()] to close navbar after select any anchor 
+    * use Boolean Flag (isNavbarOpen) to return padding for anchor in min-width 599px
+    -->
+    <a
+      (click)="onNavbarClick()"
+      [ngClass]="{ 'ps-32': !isNavbarOpen }"
+      class="navbar__link text-main-secondary text-decoration-none active"
+      routerLink="/home"
+      routerLinkActive="active"
+    >
+      <span class="text-main-primary">#</span>home
+    </a>
+  </li>
+  <!-- ul li use boolean (isNavbarOpen) to change padding if it open in small screens -->
+  <li [ngClass]="{ 'pb-4': isNavbarOpen }" class="navbar__item">
+    <!-- anchor use function [onNavbarClick()] to close navbar after select any anchor 
+        * use Boolean Flag (isNavbarOpen) to return padding for anchor in min-width 599px
+    -->
+    <a
+      (click)="onNavbarClick()"
+      [ngClass]="{ 'ps-32': !isNavbarOpen }"
+      class="navbar__link text-main-secondary text-decoration-none"
+      routerLink="/works"
+      routerLinkActive="active"
+    >
+      <span class="text-main-primary">#</span>works
+    </a>
+  </li>
+  <!-- ul li use boolean (isNavbarOpen) to change padding if it open in small screens -->
+  <li [ngClass]="{ 'pb-4': isNavbarOpen }" class="navbar__item">
+    <!-- anchor use function [onNavbarClick()] to close navbar after select any anchor 
+        * use Boolean Flag (isNavbarOpen) to return padding for anchor in min-width 599px
+    -->
+    <a
+      (click)="onNavbarClick()"
+      [ngClass]="{ 'ps-32': !isNavbarOpen }"
+      class="navbar__link text-main-secondary text-decoration-none"
+      routerLink="/about"
+      routerLinkActive="active"
+    >
+      <span class="text-main-primary">#</span>about-me
+    </a>
+  </li>
+  <!-- ul li use boolean (isNavbarOpen) to change padding if it open in small screens -->
+  <li [ngClass]="{ 'pb-4': isNavbarOpen }" class="navbar__item">
+    <!-- anchor use function [onNavbarClick()] to close navbar after select any anchor 
+        * use Boolean Flag (isNavbarOpen) to return padding for anchor in min-width 599px
+    -->
+    <a
+      (click)="onNavbarClick()"
+      [ngClass]="{ 'ps-32': !isNavbarOpen }"
+      class="navbar__link text-main-secondary text-decoration-none"
+      routerLink="/contacts"
+      routerLinkActive="active"
+    >
+      <span class="text-main-primary">#</span>contacts
+    </a>
+  </li>
+  <!-- ul li use boolean (isNavbarOpen) to change padding if it open in small screens -->
+  <li [ngClass]="{ 'pb-4': isNavbarOpen }" class="align-self-end navbar__item">
+    <!-- passing Boolean Flag (isNavbarOpen) to sitelang component to make it behaive like rest anchors -->
+    <app-dropdown-sitelanguages
+      [isNavbarOpen]="isNavbarOpen"
+    ></app-dropdown-sitelanguages>
+  </li>
+  <!-- Social icons only appear while navbar open in small screens insted of medialine component
+  * using boolean flag (isNavbarOpen) to detect if navbar open
+  -->
+  <li
+    [ngClass]="{ 'd-flex': isNavbarOpen, 'd-none': !isNavbarOpen }"
+    class="position-absolute start-50 bottom-0 translate-middle"
+  >
+    <ul class="navbar__socialIcons list-unstyled m-0">
+      <li>
+        <a class="text-main-secondary w-100" href="#">
+          <img class="w-100" src="./assets/brands/Github.svg" alt="Github" />
+        </a>
+      </li>
+      <li class="mx-2">
+        <a class="text-main-secondary w-100" href="#">
+          <img class="w-100" src="./assets/brands/Dribble.svg" alt="Github" />
+        </a>
+      </li>
+      <li>
+        <a class="text-main-secondary w-100" href="#">
+          <img class="w-100" src="./assets/brands/Figma.svg" alt="Github" />
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>

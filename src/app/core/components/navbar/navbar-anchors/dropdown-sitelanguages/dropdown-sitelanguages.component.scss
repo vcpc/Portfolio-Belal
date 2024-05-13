@@ -1,0 +1,153 @@
+/* Import mixins to handle transition prefixes */
+@import "mixins.scss";
+
+.navbar__lang {
+  /* Positioning */
+  position: relative;
+  cursor: pointer;
+  p {
+    /* Color */
+    opacity: 0;
+    /* Other */
+    transition: 0.3s all;
+  }
+  .lang__dropdown {
+    /* Layout */
+    display: none;
+    /* Positioning */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    /* Box Model */
+    width: fit-content;
+    padding: 8px;
+    /* Other */
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .lang__dropdown.show {
+    p {
+      /* Other */
+      animation: showText 0.3s forwards;
+    }
+  }
+  /**
+  * Handle the opacity for the animation dropdown
+  */
+  @keyframes showText {
+    from {
+      /* Color */
+      opacity: 0;
+    }
+    to {
+      /* Color */
+      opacity: 1;
+    }
+  }
+  .lang__dropdown.hide {
+    p {
+      /* Color */
+      opacity: 0;
+      /* Other */
+      animation: hideText 0.3s forwards;
+    }
+    /* Other */
+    animation: hideDropDown forwards 0.3s 0s;
+  }
+  @keyframes hideText {
+    from {
+      /* Color */
+      opacity: 1;
+    }
+    to {
+      /* Color */
+      opacity: 0;
+    }
+  }
+  @keyframes hideDropDown {
+    from {
+      /* Layout */
+      display: block;
+    }
+    to {
+      /* Layout */
+      display: none;
+    }
+  }
+
+  .lang__dropdown::after {
+    content: "";
+    /* Position */
+    position: absolute;
+    inset: 0;
+    /* Box Model */
+    border: 1px solid #abb2bf;
+    /* Color */
+    opacity: 0;
+    /* Other */
+    z-index: -1;
+  }
+  .lang__dropdown.show::after {
+    /* Other */
+    transform-origin: top center;
+    animation: showBorder 0.3s forwards;
+  }
+  @keyframes showBorder {
+    from {
+      /* Color */
+      opacity: 0;
+      /* Other */
+      transform: rotatex(70deg) translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: rotatex(0deg);
+    }
+  }
+  .lang__dropdown.hide::after {
+    /* Other */
+
+    transform-origin: top center;
+    animation: hideBorder 0.3s forwards;
+  }
+  @keyframes hideBorder {
+    from {
+      /* Color */
+      opacity: 1;
+      /* Other */
+      transform: rotatex(0deg);
+    }
+    to {
+      /* Color */
+      opacity: 0;
+      /* Other */
+      transform: rotatex(70deg);
+    }
+  }
+  .chevron-down {
+    /* Other */
+    transition: 0.3s all;
+  }
+  .chevron-down.show {
+    /* Other */
+    transform: rotate(-180deg);
+  }
+  ::selection {
+    /* Color */
+    background-color: transparent;
+  }
+}
+@media (min-width: 768px) {
+  /* Box Model */
+  .ps-32 {
+    padding-left: 32px;
+  }
+}
+@media (max-width: 767px) {
+  /* Box Model */
+  .ps-32 {
+    padding-left: 16px;
+  }
+}

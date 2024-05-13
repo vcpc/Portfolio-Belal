@@ -1,0 +1,65 @@
+/* import mixins to handle transition prefixexs in all browsers */
+@import "mixins.scss";
+
+/* make ul take width&height 100% from parent navbar when open it and change font size*/
+@media (max-width: 599px) {
+  .navbar__list {
+    width: 100%;
+    height: 100%;
+  }
+  .navbar__item {
+    font-size: 32px;
+  }
+}
+
+/* handle padding between anchors depend on screen width */
+@media (min-width: 768px) {
+  .ps-32 {
+    padding-left: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .ps-32 {
+    padding-left: 16px;
+  }
+}
+
+/* anchors have three different styles
+* 1- defult
+* 2- hover
+* 3- active
+*/
+.navbar__link {
+  @include transition(0.3s, All); /* 1 */
+}
+a.navbar__link:hover {
+  /* Color */
+  color: white; /* 2 */
+}
+.navbar__link.active {
+  /* Color */
+  color: white; /* 3 */
+  /* Text */
+  font-weight: 500;
+}
+
+/* handle navbar social icons when appear in small screens while navbar open */
+.navbar__socialIcons {
+  /* Layout */
+  display: flex;
+  justify-content: center;
+  /* Box Model */
+  width: 100%;
+  padding-bottom: 36px;
+  li {
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Box Model */
+    width: 64px;
+    height: 64px;
+    /* Text */
+    font-size: 32px;
+  }
+}
